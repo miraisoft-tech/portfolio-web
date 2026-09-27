@@ -112,7 +112,7 @@ export function AboutSection({ bio }: AboutSectionProps) {
           <span>Engineering Profile & Leadership</span>
         </div>
         <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
-          Adeseluka Toba Samuel (SmartRay)
+          Adeseluka Toba Samuel
         </h2>
         <p className="text-slate-400 text-sm sm:text-base max-w-3xl leading-relaxed">
           {bio.summary}
