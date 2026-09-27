@@ -46,28 +46,30 @@ How can I help you today?`,
   return (
     <>
       {/* Floating Trigger Button */}
-      <div className="fixed bottom-6 right-6 z-40">
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="group relative flex items-center gap-2.5 px-4 py-3 rounded-full bg-slate-900 border border-sky-500/40 text-white font-mono text-xs shadow-2xl hover:border-sky-400 hover:scale-105 transition-all duration-300 backdrop-blur-xl"
-          aria-label="Open AI Assistant"
-        >
-          {/* Animated Glow Halo */}
-          <span className="absolute -inset-0.5 rounded-full bg-gradient-to-r from-sky-500 to-emerald-500 opacity-30 group-hover:opacity-60 blur-sm transition duration-300" />
-          
-          <div className="relative flex items-center gap-2">
-            <div className="w-6 h-6 rounded-full bg-sky-500/20 border border-sky-400/40 flex items-center justify-center text-sky-400">
-              <Bot className="w-3.5 h-3.5 animate-pulse" />
+      {!isOpen && (
+        <div className="fixed bottom-6 right-6 z-40">
+          <button
+            onClick={() => setIsOpen(true)}
+            className="group relative flex items-center gap-2.5 px-4 py-3 rounded-full bg-slate-900 border border-sky-500/40 text-white font-mono text-xs shadow-2xl hover:border-sky-400 hover:scale-105 transition-all duration-300 backdrop-blur-xl"
+            aria-label="Open AI Assistant"
+          >
+            {/* Animated Glow Halo */}
+            <span className="absolute -inset-0.5 rounded-full bg-gradient-to-r from-sky-500 to-emerald-500 opacity-30 group-hover:opacity-60 blur-sm transition duration-300" />
+            
+            <div className="relative flex items-center gap-2">
+              <div className="w-6 h-6 rounded-full bg-sky-500/20 border border-sky-400/40 flex items-center justify-center text-sky-400">
+                <Bot className="w-3.5 h-3.5 animate-pulse" />
+              </div>
+              <span className="font-semibold text-slate-100 hidden sm:inline">Ask AI Agent</span>
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping inline-block" />
             </div>
-            <span className="font-semibold text-slate-100 hidden sm:inline">Ask AI Agent</span>
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping inline-block" />
-          </div>
-        </button>
-      </div>
+          </button>
+        </div>
+      )}
 
-      {/* Slide-Over Chat Window */}
+      {/* Floating Chat Widget */}
       {isOpen && (
-        <div className="fixed inset-y-0 right-0 z-50 w-full sm:max-w-md bg-[#0a0e17] border-l border-slate-800 shadow-2xl flex flex-col justify-between text-slate-200">
+        <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 w-[calc(100vw-2rem)] sm:w-[400px] h-[500px] max-h-[calc(100dvh-5rem)] bg-[#0a0e17] border border-slate-800/90 rounded-2xl shadow-2xl shadow-black/80 flex flex-col justify-between text-slate-200 overflow-hidden">
           
           {/* Header */}
           <div className="p-4 border-b border-slate-800/80 bg-[#0c121e]/90 backdrop-blur-md flex items-center justify-between">

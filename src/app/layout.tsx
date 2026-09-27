@@ -20,7 +20,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Samuel (SmartRay) | Lead Distributed Systems & Full-Stack Engineer",
+  title: "Adeseluka Toba Samuel | Lead Distributed Systems & Full-Stack Engineer",
   description: "High-technical, learning-focused portfolio showcasing distributed event-driven engines, real-time settlement ledgers, and autonomous AI architectures.",
   keywords: [
     "Distributed Systems",
@@ -29,11 +29,9 @@ export const metadata: Metadata = {
     "TypeScript",
     "Next.js",
     "PostgreSQL",
-    "Kafka",
-    "Fintech Architecture",
     "AI Agent Runtime"
   ],
-  authors: [{ name: "Samuel" }],
+  authors: [{ name: "Adeseluka Toba Samuel" }],
 };
 
 export default function RootLayout({

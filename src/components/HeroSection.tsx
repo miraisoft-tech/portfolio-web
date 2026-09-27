@@ -44,7 +44,7 @@ export function HeroSection({ bio, onOpenAIModal }: HeroSectionProps) {
         </h1>
 
         <p className="text-slate-300 text-base sm:text-lg max-w-2xl font-light leading-relaxed">
-          Hi, I&apos;m <strong className="text-white font-semibold">{bio.name}</strong>. With 8+ years of engineering ownership, I specialize in low-latency live streaming systems, multi-tenant SaaS architectures, embedded IoT protocols, and autonomous AI agents.
+          Hi, I&apos;m <strong className="text-white font-semibold">{bio.name}</strong>. Senior Software Engineer &amp; Tech Lead with 8+ years architecting scalable full-stack, AI, and cloud systems—spanning real-time live streaming, embedded IoT protocols, and LLM-powered SaaS serving thousands globally.
         </p>
 
         {/* Action Buttons */}
