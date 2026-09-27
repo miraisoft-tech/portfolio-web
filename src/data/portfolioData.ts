@@ -96,7 +96,7 @@ export const portfolioProjects: Project[] = [
     overview: "Architected a multi-tenant commerce SaaS platform enabling Nigerian sellers to launch isolated storefronts with instant order tracking and Paystack integration. Features an embedded autonomous AI sales representative trained on merchant catalogues via PgVector RAG.",
     featured: true,
     category: "AI & Machine Learning",
-    visibility: "public",
+    visibility: "private",
     date: "2024 - 2026",
     version: "v2.1.0-prod",
     metrics: [
@@ -115,7 +115,6 @@ export const portfolioProjects: Project[] = [
       { name: "Cloudflare R2", category: "infra" }
     ],
     productionUrl: "https://sellerspro.app",
-    githubUrl: "https://github.com/smartraysam/sellerspro_merchant",
     architecture: {
       summary: "Multi-tenant Next.js application utilizing subdomains/path routing for merchant storefront isolation. Storefront inquiries invoke an edge AI chat pipeline backed by semantic embeddings stored in PostgreSQL via PgVector. Payment events trigger webhook pipelines for real-time ledger updates.",
       diagramMermaid: `flowchart TD
@@ -190,7 +189,7 @@ SellersPro is a multi-tenant commerce and merchant automation suite powering Nig
       { name: "Node.js & Next.js", category: "framework" },
       { name: "Docker", category: "infra" }
     ],
-    productionUrl: "https://fenris.media",
+    productionUrl: "https://allaccessfans.co",
     ndaNotice: "Client Enterprise Architecture: Source code is proprietary under NDA. This case study details the sanitized system design, video transcoding pipeline, and cost optimization methodologies.",
     architecture: {
       summary: "Decoupled video ingestion and playback architecture. Live RTMP/RTMPS streams are ingested via AWS IVS for ultra-low latency playback. On-demand video uploads use Tus protocol on EC2 before dispatching asynchronous SNS events to AWS Elemental MediaConvert for multi-bitrate HLS packaging.",
@@ -245,7 +244,7 @@ High-performance video broadcast and monetization platform engineered for high-c
     overview: "Led the end-to-end system design and backend architecture for a high-concurrency emergency dispatch platform. Built in a TypeScript monorepo serving web, mobile (Flutter), and admin clients with real-time WebSockets, automated responder dispatch, and Paystack wallet settlements.",
     featured: true,
     category: "Full-Stack",
-    visibility: "public",
+    visibility: "private",
     date: "2024 - 2025",
     version: "v1.4.0",
     metrics: [
@@ -263,7 +262,6 @@ High-performance video broadcast and monetization platform engineered for high-c
       { name: "Paystack", category: "tool" }
     ],
     productionUrl: "https://resq360.ng",
-    githubUrl: "https://github.com/smartraysam/resq360_monorepo",
     architecture: {
       summary: "Centralized NestJS microservice gateway orchestrating emergency sessions, spatial geospatial proximity queries (PostGIS), and bidirectional WebSocket events to emergency responders.",
       diagramMermaid: `flowchart TD
@@ -379,7 +377,7 @@ Work completed for Hewlett-Packard Inc. on the flagship Linux developer workstat
     overview: "Built an automated campus connectivity platform for Nigerian tertiary institutions. Connects student Paystack subscription payments with real-time MikroTik RouterOS API provisioning, bandwidth quota management, and renewal job schedulers.",
     featured: false,
     category: "Full-Stack",
-    visibility: "public",
+    visibility: "private",
     date: "2023 - 2025",
     version: "v2.0.0",
     metrics: [
@@ -396,7 +394,6 @@ Work completed for Hewlett-Packard Inc. on the flagship Linux developer workstat
       { name: "Paystack", category: "tool" }
     ],
     productionUrl: "https://smartgrid.ng",
-    githubUrl: "https://github.com/smartraysam/smartgrid_core",
     architecture: {
       summary: "Payment webhooks trigger asynchronous background workers that issue commands over MikroTik RouterOS API to generate credentials, configure firewall user profiles, and enforce data caps.",
       diagramMermaid: `flowchart LR
@@ -438,7 +435,7 @@ Campus Internet & Hotspot Automation Platform.
     overview: "Architected an end-to-end smart prepaid electricity metering platform. Enables consumers to purchase electricity tokens online with instant over-the-air (OTA) transmission to smart meters via cellular/IoT channels, cutting utility operating costs by 40%.",
     featured: false,
     category: "Full-Stack",
-    visibility: "public",
+    visibility: "private",
     date: "2021 - 2023",
     version: "v1.8.0",
     metrics: [
@@ -454,7 +451,6 @@ Campus Internet & Hotspot Automation Platform.
       { name: "REST APIs", category: "tool" }
     ],
     productionUrl: "https://susejmeters.org",
-    githubUrl: "https://github.com/smartraysam/susejmeters_platform",
     architecture: {
       summary: "Secure payment gateway triggers the Standard Transfer Specification (STS) token generation module. Tokens are converted into encrypted payloads and dispatched directly to the smart meter's cellular modem.",
       diagramMermaid: `flowchart LR
