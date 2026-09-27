@@ -63,7 +63,7 @@ export default function RootLayout({
               </div>
               <div className="flex flex-col">
                 <span className="font-mono font-semibold text-sm tracking-tight text-white flex items-center gap-1.5">
-                  smartray.dev
+                  portfolio.miraisoft.ng
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                 </span>
                 <span className="text-[10px] text-slate-400 font-mono">systems & cloud craft</span>
@@ -141,7 +141,7 @@ export default function RootLayout({
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex flex-col items-center md:items-start gap-1">
               <div className="flex items-center gap-2 text-slate-300 font-mono text-xs">
-                <span>© {new Date().getFullYear()} Samuel (SmartRay)</span>
+                <span>© {new Date().getFullYear()} Adeseluka Toba Samuel</span>
                 <span>•</span>
                 <span className="text-sky-400">Next.js 15 + Edge AI</span>
               </div>
@@ -158,7 +158,7 @@ export default function RootLayout({
               <span>•</span>
               <a href="#about" className="hover:text-sky-400 transition-colors">Recruiter Fast Pitch</a>
               <span>•</span>
-              <a href="mailto:contact@smartray.dev" className="hover:text-sky-400 transition-colors">contact@smartray.dev</a>
+              <a href="mailto:adeselukatobasamuel@yahoo.com" className="hover:text-sky-400 transition-colors">adeselukatobasamuel@yahoo.com</a>
             </div>
           </div>
         </footer>
