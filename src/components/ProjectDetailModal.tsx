@@ -116,10 +116,10 @@ export function ProjectDetailModal({ project, onClose }: ProjectDetailModalProps
           {/* Key Metrics Ribbon */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3">
             {project.metrics.map((m, idx) => (
-              <div key={idx} className="p-3 sm:p-3.5 rounded-xl bg-slate-900/60 border border-slate-800/80">
-                <div className="text-[10px] sm:text-[11px] font-mono text-slate-400 uppercase tracking-wider truncate">{m.label}</div>
-                <div className="text-lg sm:text-xl font-bold text-white mt-1 truncate">{m.value}</div>
-                {m.trend && <div className="text-[10px] sm:text-[11px] text-emerald-400 font-mono mt-0.5 truncate">{m.trend}</div>}
+              <div key={idx} className="p-3 sm:p-3.5 rounded-xl bg-slate-900/60 border border-slate-800/80 min-w-0 overflow-hidden">
+                <div className="text-[10px] sm:text-[11px] font-mono text-slate-400 uppercase tracking-wider break-words leading-tight">{m.label}</div>
+                <div className="text-base sm:text-xl font-bold text-white mt-1 break-words leading-snug">{m.value}</div>
+                {m.trend && <div className="text-[10px] sm:text-[11px] text-emerald-400 font-mono mt-0.5 break-words">{m.trend}</div>}
               </div>
             ))}
           </div>
@@ -156,9 +156,9 @@ export function ProjectDetailModal({ project, onClose }: ProjectDetailModalProps
 
             {/* Architecture Diagram Representation */}
             {project.architecture.diagramMermaid && (
-              <div className="p-3.5 sm:p-5 rounded-xl bg-[#070a12] border border-slate-800 font-mono text-[11px] sm:text-xs overflow-x-auto text-sky-300/90 shadow-inner max-w-full">
+              <div className="p-3 sm:p-5 rounded-xl bg-[#070a12] border border-slate-800 font-mono text-[10px] sm:text-xs overflow-x-auto text-sky-300/90 shadow-inner w-full">
                 <div className="text-[10px] sm:text-[11px] text-slate-500 mb-2 uppercase font-semibold">Architecture Topology (Mermaid DSL)</div>
-                <pre className="whitespace-pre leading-relaxed">{project.architecture.diagramMermaid}</pre>
+                <pre className="whitespace-pre leading-relaxed min-w-0">{project.architecture.diagramMermaid}</pre>
               </div>
             )}
           </div>
@@ -172,12 +172,12 @@ export function ProjectDetailModal({ project, onClose }: ProjectDetailModalProps
               </div>
               <div className="space-y-2.5 sm:space-y-3">
                 {project.architecture.adrs.map((adr, idx) => (
-                  <div key={idx} className="p-3.5 sm:p-4 rounded-xl bg-slate-900/50 border border-slate-800 space-y-2">
-                    <div className="font-semibold text-xs sm:text-sm text-white flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0" />
-                      <span>{adr.title}</span>
+                  <div key={idx} className="p-3 sm:p-4 rounded-xl bg-slate-900/50 border border-slate-800 space-y-2 min-w-0 overflow-hidden">
+                    <div className="font-semibold text-xs sm:text-sm text-white flex items-start gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0 mt-1.5" />
+                      <span className="break-words flex-1">{adr.title}</span>
                     </div>
-                    <div className="text-xs text-slate-300 space-y-1.5 leading-relaxed">
+                    <div className="text-xs text-slate-300 space-y-1.5 leading-relaxed break-words">
                       <p><strong className="text-slate-400 font-mono">Context:</strong> {adr.context}</p>
                       <p><strong className="text-emerald-400 font-mono">Decision:</strong> {adr.decision}</p>
                       <p><strong className="text-amber-400 font-mono">Trade-offs:</strong> {adr.tradeOffs}</p>
@@ -197,14 +197,14 @@ export function ProjectDetailModal({ project, onClose }: ProjectDetailModalProps
               </div>
               <div className="space-y-2.5 sm:space-y-3">
                 {project.architecture.challenges.map((c, idx) => (
-                  <div key={idx} className="p-3.5 sm:p-4 rounded-xl bg-slate-900/50 border border-slate-800 space-y-2 leading-relaxed">
-                    <p className="text-xs text-rose-300">
+                  <div key={idx} className="p-3 sm:p-4 rounded-xl bg-slate-900/50 border border-slate-800 space-y-2 leading-relaxed min-w-0 overflow-hidden">
+                    <p className="text-xs text-rose-300 break-words">
                       <strong className="font-mono text-rose-400">Bottleneck:</strong> {c.problem}
                     </p>
-                    <p className="text-xs text-sky-300">
+                    <p className="text-xs text-sky-300 break-words">
                       <strong className="font-mono text-sky-400">Solution:</strong> {c.solution}
                     </p>
-                    <p className="text-xs text-emerald-300">
+                    <p className="text-xs text-emerald-300 break-words">
                       <strong className="font-mono text-emerald-400">Outcome:</strong> {c.outcome}
                     </p>
                   </div>

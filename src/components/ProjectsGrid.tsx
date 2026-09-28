@@ -49,14 +49,14 @@ export function ProjectsGrid({ initialProjects }: ProjectsGridProps) {
     <section id="projects" className="py-14 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Section Header */}
       <div className="space-y-3 mb-8 sm:mb-10">
-        <div className="flex items-center gap-2 text-sky-400 font-mono text-xs font-semibold tracking-wider uppercase">
-          <Layers className="w-4 h-4" />
-          <span>Production Systems & Architecture</span>
+        <div className="flex items-center gap-2 text-sky-400 font-mono text-xs font-semibold tracking-wider uppercase flex-wrap">
+          <Layers className="w-4 h-4 shrink-0" />
+          <span className="break-words">Production Systems &amp; Architecture</span>
         </div>
-        <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-white">
-          Engineered for Resilience & Scale
+        <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-white leading-tight break-words">
+          Engineered for Resilience &amp; Scale
         </h2>
-        <p className="text-slate-400 text-xs sm:text-base max-w-2xl leading-relaxed">
+        <p className="text-slate-400 text-xs sm:text-base max-w-2xl leading-relaxed break-words">
           High-performance production platforms, AI agent runtimes, and distributed services. Includes sanitized architectural deep-dives for confidential client work.
         </p>
       </div>
@@ -190,11 +190,11 @@ export function ProjectsGrid({ initialProjects }: ProjectsGridProps) {
                 </p>
 
                 {/* Recruiter Impact Metrics Grid - Never cut off text */}
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1">
+                <div className="grid grid-cols-2 gap-2 pt-1">
                   {project.metrics.map((m, idx) => (
-                    <div key={idx} className="p-2.5 rounded-xl bg-slate-900/60 border border-slate-800/60 min-w-0 flex flex-col justify-between">
+                    <div key={idx} className="p-2.5 rounded-xl bg-slate-900/60 border border-slate-800/60 min-w-0 flex flex-col justify-between overflow-hidden">
                       <div className="text-[10px] font-mono text-slate-400 uppercase tracking-tight break-words leading-tight">{m.label}</div>
-                      <div className="text-xs sm:text-sm font-bold text-white mt-1.5 break-words">{m.value}</div>
+                      <div className="text-xs sm:text-sm font-bold text-white mt-1.5 break-words leading-snug">{m.value}</div>
                     </div>
                   ))}
                 </div>

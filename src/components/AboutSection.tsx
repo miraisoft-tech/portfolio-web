@@ -107,14 +107,14 @@ export function AboutSection({ bio }: AboutSectionProps) {
       
       {/* Section Header */}
       <div className="space-y-3 mb-10 sm:mb-14">
-        <div className="flex items-center gap-2 text-purple-400 font-mono text-xs font-semibold tracking-wider uppercase">
+        <div className="flex items-center gap-2 text-purple-400 font-mono text-xs font-semibold tracking-wider uppercase flex-wrap">
           <User className="w-4 h-4 shrink-0" />
-          <span>Engineering Profile &amp; Leadership</span>
+          <span className="wrap-break-word">Engineering Profile &amp; Leadership</span>
         </div>
-        <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-white break-words">
+        <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-white wrap-break-word leading-tight">
           Adeseluka Toba Samuel
         </h2>
-        <p className="text-slate-400 text-xs sm:text-base max-w-3xl leading-relaxed break-words">
+        <p className="text-slate-400 text-xs sm:text-base max-w-3xl leading-relaxed wrap-break-word">
           {bio.summary}
         </p>
         <div className="flex items-center gap-2.5 sm:gap-4 text-xs font-mono text-slate-400 pt-2 flex-wrap">
@@ -178,12 +178,12 @@ export function AboutSection({ bio }: AboutSectionProps) {
         </div>
 
         {/* Selected Category Skill Cards - No truncation, full wrapping */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5 sm:gap-3 pt-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3 pt-2">
           {bio.techMatrix[selectedTechTab].skills.map((skill, idx) => (
-            <div key={idx} className="p-3.5 sm:p-4 rounded-xl bg-slate-900/60 border border-slate-800/80 space-y-1.5 min-w-0">
+            <div key={idx} className="p-3.5 sm:p-4 rounded-xl bg-slate-900/60 border border-slate-800/80 space-y-1.5 min-w-0 overflow-hidden">
               <div className="flex items-start justify-between gap-2">
-                <span className="font-semibold text-xs sm:text-sm text-white font-mono break-words leading-snug flex-1">{skill.name}</span>
-                <span className={`text-[9px] sm:text-[10px] font-mono px-2 py-0.5 rounded-full uppercase font-bold shrink-0 ${
+                <span className="font-semibold text-xs sm:text-sm text-white font-mono wrap-break-word leading-snug flex-1">{skill.name}</span>
+                <span className={`text-[9px] sm:text-[10px] font-mono px-2 py-0.5 rounded-full uppercase font-bold shrink-0 mt-0.5 ${
                   skill.level === 'Expert' 
                     ? 'bg-emerald-500/15 text-emerald-400 border border-emerald-500/30'
                     : 'bg-sky-500/15 text-sky-400 border border-sky-500/30'
@@ -191,7 +191,7 @@ export function AboutSection({ bio }: AboutSectionProps) {
                   {skill.level}
                 </span>
               </div>
-              <p className="text-xs text-slate-400 leading-relaxed break-words">
+              <p className="text-xs text-slate-400 leading-relaxed wrap-break-word">
                 {skill.context}
               </p>
             </div>
@@ -206,19 +206,19 @@ export function AboutSection({ bio }: AboutSectionProps) {
           <span>Professional Experience &amp; Track Record</span>
         </h3>
 
-        <div className="relative border-l border-slate-800 ml-3 sm:ml-6 pl-5 sm:pl-8 space-y-8 sm:space-y-10">
+        <div className="relative border-l border-slate-800 ml-3 sm:ml-4 pl-5 sm:pl-7 space-y-8 sm:space-y-10">
           {careerTimeline.map((item, idx) => (
             <div key={idx} className="relative group min-w-0">
               {/* Perfectly centered timeline dot */}
-              <div className="absolute -left-5 sm:-left-8 -translate-x-1/2 top-1.5 w-3.5 h-3.5 rounded-full bg-slate-900 border-2 border-sky-400 group-hover:bg-sky-400 transition-colors" />
+              <div className="absolute -left-5 sm:-left-7 -translate-x-1/2 top-1.5 w-3 h-3 sm:w-3.5 sm:h-3.5 rounded-full bg-slate-900 border-2 border-sky-400 group-hover:bg-sky-400 transition-colors" />
 
               <div className="space-y-2 min-w-0">
                 <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-1">
                   <div className="min-w-0">
-                    <h4 className="text-sm sm:text-base font-bold text-white group-hover:text-sky-300 transition-colors break-words leading-snug">
+                    <h4 className="text-sm sm:text-base font-bold text-white group-hover:text-sky-300 transition-colors wrap-break-word leading-snug">
                       {item.role}
                     </h4>
-                    <span className="text-xs sm:text-sm font-semibold text-sky-400 font-mono break-words block mt-0.5">
+                    <span className="text-xs sm:text-sm font-semibold text-sky-400 font-mono wrap-break-word block mt-0.5">
                       {item.company}
                     </span>
                   </div>
@@ -234,7 +234,7 @@ export function AboutSection({ bio }: AboutSectionProps) {
                   {item.achievements.map((ach, aIdx) => (
                     <li key={aIdx} className="text-xs text-slate-300 leading-relaxed flex items-start gap-2">
                       <span className="text-sky-400 font-bold shrink-0 mt-0.5">•</span>
-                      <span className="break-words min-w-0 flex-1">{ach}</span>
+                      <span className="wrap-break-word min-w-0 flex-1">{ach}</span>
                     </li>
                   ))}
                 </ul>

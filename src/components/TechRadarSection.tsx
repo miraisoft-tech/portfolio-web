@@ -26,15 +26,15 @@ export function TechRadarSection({ radarItems, tilNotes }: TechRadarSectionProps
       
       {/* Section Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 sm:mb-10">
-        <div className="space-y-3">
-          <div className="flex items-center gap-2 text-emerald-400 font-mono text-xs font-semibold tracking-wider uppercase">
-            <Compass className="w-4 h-4" />
-            <span>Continuous Learning &amp; Engineering Edge</span>
+        <div className="space-y-3 min-w-0">
+          <div className="flex items-center gap-2 text-emerald-400 font-mono text-xs font-semibold tracking-wider uppercase flex-wrap">
+            <Compass className="w-4 h-4 shrink-0" />
+            <span className="break-words">Continuous Learning &amp; Engineering Edge</span>
           </div>
-          <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-white">
+          <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-white leading-tight break-words">
             Engineering Radar &amp; TIL Notes
           </h2>
-          <p className="text-slate-400 text-xs sm:text-base max-w-2xl leading-relaxed">
+          <p className="text-slate-400 text-xs sm:text-base max-w-2xl leading-relaxed break-words">
             A real-time telemetry dashboard of active research topics, production mastery, and technical breakthroughs shipped weekly.
           </p>
         </div>
@@ -107,11 +107,11 @@ export function TechRadarSection({ radarItems, tilNotes }: TechRadarSectionProps
           </div>
 
           {/* Radar Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
             {filteredRadar.map((item) => (
               <div 
                 key={item.id} 
-                className="glass-panel glass-panel-hover rounded-2xl p-4 sm:p-6 border border-slate-800 flex flex-col justify-between space-y-4 min-w-0"
+                className="glass-panel glass-panel-hover rounded-2xl p-4 sm:p-6 border border-slate-800 flex flex-col justify-between space-y-4 min-w-0 overflow-hidden"
               >
                 <div className="space-y-3 min-w-0">
                   <div className="flex items-center justify-between gap-2">
@@ -170,7 +170,7 @@ export function TechRadarSection({ radarItems, tilNotes }: TechRadarSectionProps
       {/* Tab 2: TIL Notes */}
       {activeTab === 'til' && (
         <div className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {tilNotes.map((note) => (
               <div 
                 key={note.id}
