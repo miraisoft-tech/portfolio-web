@@ -108,18 +108,18 @@ export function AboutSection({ bio }: AboutSectionProps) {
       {/* Section Header */}
       <div className="space-y-3 mb-10 sm:mb-14">
         <div className="flex items-center gap-2 text-purple-400 font-mono text-xs font-semibold tracking-wider uppercase">
-          <User className="w-4 h-4" />
+          <User className="w-4 h-4 shrink-0" />
           <span>Engineering Profile &amp; Leadership</span>
         </div>
-        <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-white">
+        <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-white break-words">
           Adeseluka Toba Samuel
         </h2>
-        <p className="text-slate-400 text-xs sm:text-base max-w-3xl leading-relaxed">
+        <p className="text-slate-400 text-xs sm:text-base max-w-3xl leading-relaxed break-words">
           {bio.summary}
         </p>
-        <div className="flex items-center gap-3 sm:gap-4 text-xs font-mono text-slate-400 pt-2 flex-wrap">
+        <div className="flex items-center gap-2.5 sm:gap-4 text-xs font-mono text-slate-400 pt-2 flex-wrap">
           <span className="flex items-center gap-1.5 text-slate-300">
-            <MapPin className="w-3.5 h-3.5 text-rose-400" />
+            <MapPin className="w-3.5 h-3.5 text-rose-400 shrink-0" />
             <span>{bio.location}</span>
           </span>
           <span className="text-slate-700">•</span>
@@ -135,14 +135,14 @@ export function AboutSection({ bio }: AboutSectionProps) {
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
           {bio.philosophy.map((item, idx) => (
-            <div key={idx} className="p-4 sm:p-5 rounded-2xl bg-slate-900/50 border border-slate-800 space-y-2">
+            <div key={idx} className="p-4 sm:p-5 rounded-2xl bg-slate-900/50 border border-slate-800 space-y-2 min-w-0">
               <div className="flex items-center gap-3">
                 <div className="p-2 rounded-lg bg-slate-800/80 border border-slate-700/60 shrink-0">
                   {getPhilosophyIcon(item.iconName)}
                 </div>
-                <h4 className="text-sm font-semibold text-white">{item.title}</h4>
+                <h4 className="text-sm font-semibold text-white break-words">{item.title}</h4>
               </div>
-              <p className="text-xs text-slate-400 leading-relaxed pl-0 sm:pl-11 pt-1 sm:pt-0">
+              <p className="text-xs text-slate-400 leading-relaxed pl-0 sm:pl-11 pt-1 sm:pt-0 break-words">
                 {item.description}
               </p>
             </div>
@@ -177,12 +177,12 @@ export function AboutSection({ bio }: AboutSectionProps) {
           ))}
         </div>
 
-        {/* Selected Category Skill Cards */}
+        {/* Selected Category Skill Cards - No truncation, full wrapping */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5 sm:gap-3 pt-2">
           {bio.techMatrix[selectedTechTab].skills.map((skill, idx) => (
-            <div key={idx} className="p-3.5 sm:p-4 rounded-xl bg-slate-900/60 border border-slate-800/80 space-y-1.5">
-              <div className="flex items-center justify-between gap-2">
-                <span className="font-semibold text-xs sm:text-sm text-white font-mono truncate">{skill.name}</span>
+            <div key={idx} className="p-3.5 sm:p-4 rounded-xl bg-slate-900/60 border border-slate-800/80 space-y-1.5 min-w-0">
+              <div className="flex items-start justify-between gap-2">
+                <span className="font-semibold text-xs sm:text-sm text-white font-mono break-words leading-snug flex-1">{skill.name}</span>
                 <span className={`text-[9px] sm:text-[10px] font-mono px-2 py-0.5 rounded-full uppercase font-bold shrink-0 ${
                   skill.level === 'Expert' 
                     ? 'bg-emerald-500/15 text-emerald-400 border border-emerald-500/30'
@@ -191,7 +191,7 @@ export function AboutSection({ bio }: AboutSectionProps) {
                   {skill.level}
                 </span>
               </div>
-              <p className="text-xs text-slate-400 leading-relaxed">
+              <p className="text-xs text-slate-400 leading-relaxed break-words">
                 {skill.context}
               </p>
             </div>
@@ -206,23 +206,23 @@ export function AboutSection({ bio }: AboutSectionProps) {
           <span>Professional Experience &amp; Track Record</span>
         </h3>
 
-        <div className="relative border-l border-slate-800 ml-2 sm:ml-4 pl-4 sm:pl-8 space-y-8 sm:space-y-10">
+        <div className="relative border-l border-slate-800 ml-3 sm:ml-6 pl-5 sm:pl-8 space-y-8 sm:space-y-10">
           {careerTimeline.map((item, idx) => (
-            <div key={idx} className="relative group">
+            <div key={idx} className="relative group min-w-0">
               {/* Perfectly centered timeline dot */}
-              <div className="absolute -left-4 sm:-left-8 -translate-x-1/2 top-1.5 w-3.5 h-3.5 rounded-full bg-slate-900 border-2 border-sky-400 group-hover:bg-sky-400 transition-colors" />
+              <div className="absolute -left-5 sm:-left-8 -translate-x-1/2 top-1.5 w-3.5 h-3.5 rounded-full bg-slate-900 border-2 border-sky-400 group-hover:bg-sky-400 transition-colors" />
 
-              <div className="space-y-2">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                  <div>
-                    <h4 className="text-sm sm:text-base font-bold text-white group-hover:text-sky-300 transition-colors">
+              <div className="space-y-2 min-w-0">
+                <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-1">
+                  <div className="min-w-0">
+                    <h4 className="text-sm sm:text-base font-bold text-white group-hover:text-sky-300 transition-colors break-words leading-snug">
                       {item.role}
                     </h4>
-                    <span className="text-xs sm:text-sm font-semibold text-sky-400 font-mono">
+                    <span className="text-xs sm:text-sm font-semibold text-sky-400 font-mono break-words block mt-0.5">
                       {item.company}
                     </span>
                   </div>
-                  <div className="flex items-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs font-mono text-slate-500 flex-wrap">
+                  <div className="flex items-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs font-mono text-slate-500 flex-wrap pt-0.5">
                     <Calendar className="w-3.5 h-3.5 shrink-0" />
                     <span>{item.period}</span>
                     <span className="text-slate-700">•</span>
@@ -234,7 +234,7 @@ export function AboutSection({ bio }: AboutSectionProps) {
                   {item.achievements.map((ach, aIdx) => (
                     <li key={aIdx} className="text-xs text-slate-300 leading-relaxed flex items-start gap-2">
                       <span className="text-sky-400 font-bold shrink-0 mt-0.5">•</span>
-                      <span>{ach}</span>
+                      <span className="break-words min-w-0 flex-1">{ach}</span>
                     </li>
                   ))}
                 </ul>
@@ -248,31 +248,31 @@ export function AboutSection({ bio }: AboutSectionProps) {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 pt-6 border-t border-slate-800">
         
         {/* Education */}
-        <div className="p-4 sm:p-6 rounded-2xl bg-slate-900/40 border border-slate-800 space-y-3">
+        <div className="p-4 sm:p-6 rounded-2xl bg-slate-900/40 border border-slate-800 space-y-3 min-w-0">
           <div className="flex items-center gap-2 text-white font-bold text-sm sm:text-base">
             <GraduationCap className="w-5 h-5 text-sky-400 shrink-0" />
             <span>Formal Education</span>
           </div>
           <div>
-            <div className="font-semibold text-xs sm:text-sm text-white">B.Eng. Electrical &amp; Electronics Engineering</div>
-            <div className="text-xs font-mono text-sky-400 mt-0.5">Federal University of Technology, Akure (FUTA)</div>
-            <div className="text-[11px] sm:text-xs text-slate-500 mt-1 leading-relaxed">
+            <div className="font-semibold text-xs sm:text-sm text-white break-words">B.Eng. Electrical &amp; Electronics Engineering</div>
+            <div className="text-xs font-mono text-sky-400 mt-0.5 break-words">Federal University of Technology, Akure (FUTA)</div>
+            <div className="text-[11px] sm:text-xs text-slate-500 mt-1 leading-relaxed break-words">
               Class of 2016 • Rigorous foundation in circuit analysis, digital systems, signal processing, and low-level firmware.
             </div>
           </div>
         </div>
 
-        {/* Certifications */}
-        <div className="p-4 sm:p-6 rounded-2xl bg-slate-900/40 border border-slate-800 space-y-3">
+        {/* Certifications - No truncation */}
+        <div className="p-4 sm:p-6 rounded-2xl bg-slate-900/40 border border-slate-800 space-y-3 min-w-0">
           <div className="flex items-center gap-2 text-white font-bold text-sm sm:text-base">
             <Award className="w-5 h-5 text-emerald-400 shrink-0" />
             <span>Certifications &amp; Honors</span>
           </div>
           <div className="space-y-2">
             {certifications.map((c, idx) => (
-              <div key={idx} className="flex items-center justify-between text-xs font-mono border-b border-slate-800/60 pb-1.5 gap-2">
-                <span className="text-slate-300 truncate">{c.name}</span>
-                <span className="text-slate-500 font-semibold shrink-0">{c.year}</span>
+              <div key={idx} className="flex items-start justify-between text-xs font-mono border-b border-slate-800/60 pb-2 pt-1 gap-2">
+                <span className="text-slate-300 break-words flex-1 leading-snug">{c.name}</span>
+                <span className="text-slate-500 font-semibold shrink-0 pt-0.5">{c.year}</span>
               </div>
             ))}
           </div>

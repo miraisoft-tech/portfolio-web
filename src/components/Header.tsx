@@ -26,9 +26,9 @@ export function Header() {
 
   const navLinks = [
     { href: '/#projects', label: 'Projects', icon: Cpu, color: 'text-sky-400' },
+    { href: '/#about', label: 'Engineering Bio', icon: User, color: 'text-purple-400' },
     { href: '/blog', label: 'Engineer Blog', icon: BookOpen, color: 'text-amber-400' },
     { href: '/#radar', label: 'Tech Radar & TIL', icon: Sparkles, color: 'text-emerald-400' },
-    { href: '/#about', label: 'Engineering Bio', icon: User, color: 'text-purple-400' },
   ];
 
   return (

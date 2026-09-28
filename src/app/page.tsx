@@ -24,6 +24,9 @@ export default function HomePage() {
       {/* Production Projects & Deep Dive Architectures */}
       <ProjectsGrid initialProjects={portfolioProjects} />
 
+      {/* Comprehensive Engineering Profile & Career Timeline */}
+      <AboutSection bio={engineerBio} />
+
       {/* Engineering Blog & Technical Writing Dispatches */}
       <BlogSection posts={blogPosts} />
 
@@ -32,9 +35,6 @@ export default function HomePage() {
         radarItems={learningRadar} 
         tilNotes={tilNotes} 
       />
-
-      {/* Comprehensive Engineering Profile & Career Timeline */}
-      <AboutSection bio={engineerBio} />
 
       {/* Embedded AI Engineering Agent Floating Drawer */}
       <AIAssistantDrawer />

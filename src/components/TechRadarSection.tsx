@@ -43,25 +43,25 @@ export function TechRadarSection({ radarItems, tilNotes }: TechRadarSectionProps
         <div className="grid grid-cols-2 w-full sm:w-auto sm:flex items-center gap-1.5 p-1 rounded-xl bg-slate-900/90 border border-slate-800 font-mono text-xs">
           <button
             onClick={() => setActiveTab('radar')}
-            className={`px-3 sm:px-4 py-2 rounded-lg transition-all flex items-center justify-center gap-2 active:scale-[0.98] ${
+            className={`px-2.5 sm:px-4 py-2 rounded-lg transition-all flex items-center justify-center gap-1.5 sm:gap-2 active:scale-[0.98] ${
               activeTab === 'radar'
                 ? 'bg-emerald-500 text-slate-950 font-bold shadow-md'
                 : 'text-slate-400 hover:text-white'
             }`}
           >
             <TrendingUp className="w-3.5 h-3.5 shrink-0" />
-            <span className="truncate">Tech Radar ({radarItems.length})</span>
+            <span className="whitespace-nowrap text-[11px] sm:text-xs">Tech Radar ({radarItems.length})</span>
           </button>
           <button
             onClick={() => setActiveTab('til')}
-            className={`px-3 sm:px-4 py-2 rounded-lg transition-all flex items-center justify-center gap-2 active:scale-[0.98] ${
+            className={`px-2.5 sm:px-4 py-2 rounded-lg transition-all flex items-center justify-center gap-1.5 sm:gap-2 active:scale-[0.98] ${
               activeTab === 'til'
                 ? 'bg-sky-500 text-slate-950 font-bold shadow-md'
                 : 'text-slate-400 hover:text-white'
             }`}
           >
             <Terminal className="w-3.5 h-3.5 shrink-0" />
-            <span className="truncate">TIL Notes ({tilNotes.length})</span>
+            <span className="whitespace-nowrap text-[11px] sm:text-xs">TIL Notes ({tilNotes.length})</span>
           </button>
         </div>
       </div>
@@ -90,7 +90,7 @@ export function TechRadarSection({ radarItems, tilNotes }: TechRadarSectionProps
                   : 'bg-slate-900/40 text-slate-500 border-slate-800/80 hover:text-slate-300'
               }`}
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0" />
               <span>Mastered &amp; Production-Tested</span>
             </button>
             <button
@@ -101,7 +101,7 @@ export function TechRadarSection({ radarItems, tilNotes }: TechRadarSectionProps
                   : 'bg-slate-900/40 text-slate-500 border-slate-800/80 hover:text-slate-300'
               }`}
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-sky-400" />
+              <span className="w-1.5 h-1.5 rounded-full bg-sky-400 shrink-0" />
               <span>Active Experimentation</span>
             </button>
           </div>
@@ -111,14 +111,14 @@ export function TechRadarSection({ radarItems, tilNotes }: TechRadarSectionProps
             {filteredRadar.map((item) => (
               <div 
                 key={item.id} 
-                className="glass-panel glass-panel-hover rounded-2xl p-4 sm:p-6 border border-slate-800 flex flex-col justify-between space-y-4"
+                className="glass-panel glass-panel-hover rounded-2xl p-4 sm:p-6 border border-slate-800 flex flex-col justify-between space-y-4 min-w-0"
               >
-                <div className="space-y-3">
+                <div className="space-y-3 min-w-0">
                   <div className="flex items-center justify-between gap-2">
-                    <span className="text-[10px] sm:text-[11px] font-mono text-slate-500 uppercase tracking-tight">
+                    <span className="text-[10px] sm:text-[11px] font-mono text-slate-500 uppercase tracking-tight break-words">
                       {item.category}
                     </span>
-                    <span className={`text-[10px] font-mono px-2 py-0.5 rounded-full font-bold uppercase ${
+                    <span className={`text-[10px] font-mono px-2 py-0.5 rounded-full font-bold uppercase shrink-0 ${
                       item.status === 'mastered'
                         ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20'
                         : 'bg-sky-500/10 text-sky-400 border border-sky-500/20'
@@ -127,16 +127,16 @@ export function TechRadarSection({ radarItems, tilNotes }: TechRadarSectionProps
                     </span>
                   </div>
 
-                  <h3 className="text-base font-bold text-white tracking-tight">
+                  <h3 className="text-base font-bold text-white tracking-tight break-words">
                     {item.name}
                   </h3>
 
-                  <p className="text-xs text-slate-400 leading-relaxed">
+                  <p className="text-xs text-slate-400 leading-relaxed break-words">
                     {item.description}
                   </p>
                 </div>
 
-                <div className="space-y-3 pt-3 border-t border-slate-800/80">
+                <div className="space-y-3 pt-3 border-t border-slate-800/80 min-w-0">
                   {/* Progress / Mastery Bar */}
                   <div className="space-y-1">
                     <div className="flex justify-between text-[11px] font-mono text-slate-500">
@@ -154,7 +154,7 @@ export function TechRadarSection({ radarItems, tilNotes }: TechRadarSectionProps
                   </div>
 
                   {/* Recent Milestone */}
-                  <div className="p-2.5 rounded-lg bg-slate-900/60 border border-slate-800/60 text-[11px] text-slate-300">
+                  <div className="p-2.5 rounded-lg bg-slate-900/60 border border-slate-800/60 text-[11px] text-slate-300 break-words leading-relaxed">
                     <span className="text-emerald-400 font-mono font-semibold block mb-0.5">Latest Milestone:</span>
                     {item.recentMilestone}
                   </div>
@@ -174,10 +174,10 @@ export function TechRadarSection({ radarItems, tilNotes }: TechRadarSectionProps
             {tilNotes.map((note) => (
               <div 
                 key={note.id}
-                className="glass-panel glass-panel-hover rounded-2xl p-4 sm:p-6 border border-slate-800 flex flex-col justify-between space-y-4"
+                className="glass-panel glass-panel-hover rounded-2xl p-4 sm:p-6 border border-slate-800 flex flex-col justify-between space-y-4 min-w-0 overflow-hidden"
               >
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between text-xs font-mono text-slate-500">
+                <div className="space-y-3 min-w-0">
+                  <div className="flex items-center justify-between text-xs font-mono text-slate-500 gap-2 flex-wrap">
                     <span>{note.date}</span>
                     <div className="flex gap-1 flex-wrap">
                       {note.tags.map((t, idx) => (
@@ -188,22 +188,22 @@ export function TechRadarSection({ radarItems, tilNotes }: TechRadarSectionProps
                     </div>
                   </div>
 
-                  <h3 className="text-base font-bold text-white tracking-tight">
+                  <h3 className="text-base font-bold text-white tracking-tight break-words">
                     {note.title}
                   </h3>
 
-                  <p className="text-xs text-slate-300 leading-relaxed">
+                  <p className="text-xs text-slate-300 leading-relaxed break-words">
                     {note.summary}
                   </p>
 
                   {note.codeSnippet && (
                     <div className="p-3 rounded-xl bg-[#06080e] border border-slate-800 font-mono text-[10px] sm:text-[11px] text-sky-300 overflow-x-auto max-w-full">
-                      <pre className="leading-relaxed">{note.codeSnippet}</pre>
+                      <pre className="leading-relaxed whitespace-pre">{note.codeSnippet}</pre>
                     </div>
                   )}
                 </div>
 
-                <div className="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-xs text-emerald-300 font-mono leading-relaxed">
+                <div className="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-xs text-emerald-300 font-mono leading-relaxed break-words">
                   <strong className="text-emerald-400">Production Impact:</strong> {note.impact}
                 </div>
               </div>
