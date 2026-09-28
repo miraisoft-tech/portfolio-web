@@ -23,7 +23,7 @@ export function HeroSection({ bio, onOpenAIModal }: HeroSectionProps) {
   };
 
   return (
-    <section className="relative pt-8 sm:pt-12 pb-14 sm:pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative pt-8 sm:pt-12 pb-14 sm:pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-x-hidden">
       
       {/* Recruiter Quick Status Banner */}
       <div className="flex items-center gap-2 sm:gap-3 mb-6 flex-wrap">

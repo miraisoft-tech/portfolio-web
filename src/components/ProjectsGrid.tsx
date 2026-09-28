@@ -46,7 +46,7 @@ export function ProjectsGrid({ initialProjects }: ProjectsGridProps) {
   }, [initialProjects, selectedCategory, selectedVisibility, searchQuery]);
 
   return (
-    <section id="projects" className="py-14 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="py-14 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-x-hidden">
       {/* Section Header */}
       <div className="space-y-3 mb-8 sm:mb-10">
         <div className="flex items-center gap-2 text-sky-400 font-mono text-xs font-semibold tracking-wider uppercase flex-wrap">
@@ -154,7 +154,7 @@ export function ProjectsGrid({ initialProjects }: ProjectsGridProps) {
               <div className="space-y-3.5 sm:space-y-4 min-w-0">
                 
                 {/* Card Header */}
-                <div className="flex items-start justify-between gap-3">
+                <div className="flex items-start justify-between gap-3 min-w-0">
                   <div className="space-y-1 min-w-0 flex-1">
                     <div className="flex items-center gap-2 flex-wrap">
                       <span className={`text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-md font-semibold shrink-0 ${
@@ -164,9 +164,9 @@ export function ProjectsGrid({ initialProjects }: ProjectsGridProps) {
                       }`}>
                         {project.visibility === 'private' ? '🔒 Private Architecture' : '🟢 Public Project'}
                       </span>
-                      <span className="text-[10px] sm:text-[11px] font-mono text-slate-500 break-words">{project.category}</span>
+                      <span className="text-[10px] sm:text-[11px] font-mono text-slate-500 break-words min-w-0">{project.category}</span>
                     </div>
-                    <h3 className="text-base sm:text-xl font-bold text-white group-hover:text-sky-300 transition-colors break-words leading-snug">
+                    <h3 className="text-base sm:text-xl font-bold text-white group-hover:text-sky-300 transition-colors break-words leading-snug min-w-0">
                       {project.title}
                     </h3>
                   </div>
