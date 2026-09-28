@@ -31,7 +31,7 @@ export function ProjectDetailModal({ project, onClose }: ProjectDetailModalProps
   if (!project) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+    <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-6 overflow-y-auto">
       {/* Backdrop */}
       <div 
         className="fixed inset-0 bg-black/80 backdrop-blur-md transition-opacity"
@@ -39,31 +39,31 @@ export function ProjectDetailModal({ project, onClose }: ProjectDetailModalProps
       />
 
       {/* Modal Container */}
-      <div className="relative w-full max-w-4xl max-h-[90vh] bg-[#0c101a] border border-slate-700/60 rounded-2xl shadow-2xl overflow-y-auto z-10 flex flex-col my-auto text-slate-200">
+      <div className="relative w-full max-w-4xl max-h-[92vh] sm:max-h-[90vh] bg-[#0c101a] border border-slate-700/60 rounded-t-2xl sm:rounded-2xl shadow-2xl overflow-y-auto z-10 flex flex-col my-0 sm:my-auto text-slate-200">
         
         {/* Header */}
-        <div className="sticky top-0 z-20 glass-panel border-b border-slate-800/80 px-6 py-4 flex items-start justify-between bg-[#0c101a]/95 backdrop-blur-xl">
-          <div className="space-y-1 pr-6">
-            <div className="flex items-center gap-2.5 flex-wrap">
-              <span className={`text-[11px] font-mono uppercase tracking-wider px-2.5 py-0.5 rounded-full font-semibold ${
+        <div className="sticky top-0 z-20 glass-panel border-b border-slate-800/80 px-4 sm:px-6 py-3.5 sm:py-4 flex items-start justify-between bg-[#0c101a]/95 backdrop-blur-xl">
+          <div className="space-y-1 pr-3 sm:pr-6">
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className={`text-[10px] sm:text-[11px] font-mono uppercase tracking-wider px-2 sm:px-2.5 py-0.5 rounded-full font-semibold ${
                 project.visibility === 'private' 
                   ? 'bg-amber-500/15 text-amber-400 border border-amber-500/30' 
                   : 'bg-emerald-500/15 text-emerald-400 border border-emerald-500/30'
               }`}>
-                {project.visibility === 'private' ? '🔒 Private Client Architecture' : '🟢 Public / Open Source'}
+                {project.visibility === 'private' ? '🔒 Private Architecture' : '🟢 Public / Open Source'}
               </span>
-              <span className="text-xs font-mono text-slate-400">
+              <span className="text-[10px] sm:text-xs font-mono text-slate-400">
                 {project.category} • {project.date}
               </span>
             </div>
-            <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+            <h2 className="text-lg sm:text-2xl font-bold text-white tracking-tight">
               {project.title}
             </h2>
           </div>
 
           <button 
             onClick={onClose}
-            className="p-2 rounded-lg bg-slate-800/60 hover:bg-slate-700/60 text-slate-400 hover:text-white transition-colors"
+            className="p-2 rounded-lg bg-slate-800/60 hover:bg-slate-700/60 text-slate-400 hover:text-white transition-colors shrink-0"
             aria-label="Close Modal"
           >
             <X className="w-5 h-5" />
@@ -71,24 +71,24 @@ export function ProjectDetailModal({ project, onClose }: ProjectDetailModalProps
         </div>
 
         {/* Content Body */}
-        <div className="p-6 sm:p-8 space-y-8">
+        <div className="p-4 sm:p-8 space-y-6 sm:space-y-8">
           
           {/* Tagline & Links */}
           <div className="space-y-4">
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-light">
+            <p className="text-sm sm:text-lg text-slate-300 leading-relaxed font-light">
               {project.tagline}
             </p>
 
-            <div className="flex items-center gap-3 flex-wrap">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3">
               {project.productionUrl && (
                 <a
                   href={project.productionUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="px-4 py-2 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold text-sm flex items-center gap-2 shadow-lg shadow-sky-500/20 transition-all"
+                  className="px-4 py-2.5 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold text-sm flex items-center justify-center gap-2 shadow-lg shadow-sky-500/20 transition-all active:scale-[0.98]"
                 >
                   <ExternalLink className="w-4 h-4" />
-                  Visit Production App
+                  <span>Visit Production App</span>
                 </a>
               )}
 
@@ -97,16 +97,16 @@ export function ProjectDetailModal({ project, onClose }: ProjectDetailModalProps
                   href={project.githubUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-medium text-sm flex items-center gap-2 border border-slate-700 transition-all"
+                  className="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-medium text-sm flex items-center justify-center gap-2 border border-slate-700 transition-all active:scale-[0.98]"
                 >
                   <GitBranch className="w-4 h-4 text-slate-400" />
-                  View GitHub Source
+                  <span>View GitHub Source</span>
                 </a>
               )}
             </div>
 
             {project.ndaNotice && (
-              <div className="p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-300 text-xs flex items-start gap-2.5">
+              <div className="p-3 sm:p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-300 text-xs flex items-start gap-2.5 leading-relaxed">
                 <Lock className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
                 <span>{project.ndaNotice}</span>
               </div>
@@ -114,12 +114,12 @@ export function ProjectDetailModal({ project, onClose }: ProjectDetailModalProps
           </div>
 
           {/* Key Metrics Ribbon */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3">
             {project.metrics.map((m, idx) => (
-              <div key={idx} className="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800/80">
-                <div className="text-[11px] font-mono text-slate-400 uppercase tracking-wider">{m.label}</div>
-                <div className="text-xl font-bold text-white mt-1">{m.value}</div>
-                {m.trend && <div className="text-[11px] text-emerald-400 font-mono mt-0.5">{m.trend}</div>}
+              <div key={idx} className="p-3 sm:p-3.5 rounded-xl bg-slate-900/60 border border-slate-800/80">
+                <div className="text-[10px] sm:text-[11px] font-mono text-slate-400 uppercase tracking-wider truncate">{m.label}</div>
+                <div className="text-lg sm:text-xl font-bold text-white mt-1 truncate">{m.value}</div>
+                {m.trend && <div className="text-[10px] sm:text-[11px] text-emerald-400 font-mono mt-0.5 truncate">{m.trend}</div>}
               </div>
             ))}
           </div>
@@ -127,57 +127,57 @@ export function ProjectDetailModal({ project, onClose }: ProjectDetailModalProps
           {/* Tech Stack Chips */}
           <div className="space-y-2">
             <h4 className="text-xs font-mono uppercase text-slate-400 tracking-wider">Engineered With</h4>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-1.5 sm:gap-2">
               {project.techStack.map((tech, idx) => (
                 <span 
                   key={idx}
-                  className={`text-xs px-3 py-1 rounded-lg font-mono flex items-center gap-1.5 ${
+                  className={`text-[11px] sm:text-xs px-2.5 sm:px-3 py-1 rounded-lg font-mono flex items-center gap-1.5 ${
                     tech.highlight 
                       ? 'bg-sky-500/15 text-sky-300 border border-sky-500/30 font-medium'
                       : 'bg-slate-800/80 text-slate-300 border border-slate-700/60'
                   }`}
                 >
-                  <Cpu className="w-3.5 h-3.5 opacity-70" />
-                  {tech.name}
+                  <Cpu className="w-3.5 h-3.5 opacity-70 shrink-0" />
+                  <span>{tech.name}</span>
                 </span>
               ))}
             </div>
           </div>
 
           {/* System Architecture Section */}
-          <div className="space-y-4 pt-4 border-t border-slate-800">
-            <div className="flex items-center gap-2 text-white font-semibold text-lg">
-              <Layers className="w-5 h-5 text-sky-400" />
-              <h3>System Architecture & Data Flow</h3>
+          <div className="space-y-3 sm:space-y-4 pt-4 border-t border-slate-800">
+            <div className="flex items-center gap-2 text-white font-semibold text-base sm:text-lg">
+              <Layers className="w-5 h-5 text-sky-400 shrink-0" />
+              <h3>System Architecture &amp; Data Flow</h3>
             </div>
-            <p className="text-sm text-slate-300 leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
               {project.architecture.summary}
             </p>
 
             {/* Architecture Diagram Representation */}
             {project.architecture.diagramMermaid && (
-              <div className="p-5 rounded-xl bg-[#070a12] border border-slate-800 font-mono text-xs overflow-x-auto text-sky-300/90 shadow-inner">
-                <div className="text-[11px] text-slate-500 mb-2 uppercase font-semibold">Architecture Topology (Mermaid DSL)</div>
-                <pre className="whitespace-pre">{project.architecture.diagramMermaid}</pre>
+              <div className="p-3.5 sm:p-5 rounded-xl bg-[#070a12] border border-slate-800 font-mono text-[11px] sm:text-xs overflow-x-auto text-sky-300/90 shadow-inner max-w-full">
+                <div className="text-[10px] sm:text-[11px] text-slate-500 mb-2 uppercase font-semibold">Architecture Topology (Mermaid DSL)</div>
+                <pre className="whitespace-pre leading-relaxed">{project.architecture.diagramMermaid}</pre>
               </div>
             )}
           </div>
 
           {/* Architecture Decision Records (ADRs) */}
           {project.architecture.adrs.length > 0 && (
-            <div className="space-y-4 pt-4 border-t border-slate-800">
-              <div className="flex items-center gap-2 text-white font-semibold text-lg">
-                <ShieldCheck className="w-5 h-5 text-emerald-400" />
+            <div className="space-y-3 sm:space-y-4 pt-4 border-t border-slate-800">
+              <div className="flex items-center gap-2 text-white font-semibold text-base sm:text-lg">
+                <ShieldCheck className="w-5 h-5 text-emerald-400 shrink-0" />
                 <h3>Architecture Decision Records (ADRs)</h3>
               </div>
-              <div className="space-y-3">
+              <div className="space-y-2.5 sm:space-y-3">
                 {project.architecture.adrs.map((adr, idx) => (
-                  <div key={idx} className="p-4 rounded-xl bg-slate-900/50 border border-slate-800 space-y-2">
-                    <div className="font-semibold text-sm text-white flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                      {adr.title}
+                  <div key={idx} className="p-3.5 sm:p-4 rounded-xl bg-slate-900/50 border border-slate-800 space-y-2">
+                    <div className="font-semibold text-xs sm:text-sm text-white flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0" />
+                      <span>{adr.title}</span>
                     </div>
-                    <div className="text-xs text-slate-300 space-y-1.5">
+                    <div className="text-xs text-slate-300 space-y-1.5 leading-relaxed">
                       <p><strong className="text-slate-400 font-mono">Context:</strong> {adr.context}</p>
                       <p><strong className="text-emerald-400 font-mono">Decision:</strong> {adr.decision}</p>
                       <p><strong className="text-amber-400 font-mono">Trade-offs:</strong> {adr.tradeOffs}</p>
@@ -190,14 +190,14 @@ export function ProjectDetailModal({ project, onClose }: ProjectDetailModalProps
 
           {/* Hard Engineering Challenges Solved */}
           {project.architecture.challenges.length > 0 && (
-            <div className="space-y-4 pt-4 border-t border-slate-800">
-              <div className="flex items-center gap-2 text-white font-semibold text-lg">
-                <AlertTriangle className="w-5 h-5 text-amber-400" />
+            <div className="space-y-3 sm:space-y-4 pt-4 border-t border-slate-800">
+              <div className="flex items-center gap-2 text-white font-semibold text-base sm:text-lg">
+                <AlertTriangle className="w-5 h-5 text-amber-400 shrink-0" />
                 <h3>Hard Engineering Challenges Solved</h3>
               </div>
-              <div className="space-y-3">
+              <div className="space-y-2.5 sm:space-y-3">
                 {project.architecture.challenges.map((c, idx) => (
-                  <div key={idx} className="p-4 rounded-xl bg-slate-900/50 border border-slate-800 space-y-2">
+                  <div key={idx} className="p-3.5 sm:p-4 rounded-xl bg-slate-900/50 border border-slate-800 space-y-2 leading-relaxed">
                     <p className="text-xs text-rose-300">
                       <strong className="font-mono text-rose-400">Bottleneck:</strong> {c.problem}
                     </p>
@@ -216,13 +216,13 @@ export function ProjectDetailModal({ project, onClose }: ProjectDetailModalProps
           {/* Continuous Learning & Evolution */}
           <div className="space-y-3 pt-4 border-t border-slate-800">
             <h4 className="text-sm font-semibold text-white flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-sky-400" />
-              Key Competencies Leveled Up
+              <CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" />
+              <span>Key Competencies Leveled Up</span>
             </h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               {project.learnedSkills.map((skill, idx) => (
                 <div key={idx} className="p-2.5 rounded-lg bg-slate-900/60 border border-slate-800 text-xs text-slate-300 flex items-start gap-2">
-                  <span className="text-sky-400 font-bold">•</span>
+                  <span className="text-sky-400 font-bold shrink-0">•</span>
                   <span>{skill}</span>
                 </div>
               ))}
@@ -231,11 +231,11 @@ export function ProjectDetailModal({ project, onClose }: ProjectDetailModalProps
 
           {/* Embedded Project README */}
           <div className="space-y-3 pt-4 border-t border-slate-800">
-            <div className="flex items-center gap-2 text-white font-semibold text-sm font-mono">
-              <BookOpen className="w-4 h-4 text-purple-400" />
+            <div className="flex items-center gap-2 text-white font-semibold text-xs sm:text-sm font-mono">
+              <BookOpen className="w-4 h-4 text-purple-400 shrink-0" />
               <span>Project README Documentation</span>
             </div>
-            <div className="p-4 rounded-xl bg-[#06080d] border border-slate-800 font-mono text-xs text-slate-300 overflow-x-auto whitespace-pre-wrap leading-relaxed max-h-60 overflow-y-auto">
+            <div className="p-3.5 sm:p-4 rounded-xl bg-[#06080d] border border-slate-800 font-mono text-[11px] sm:text-xs text-slate-300 overflow-x-auto whitespace-pre-wrap leading-relaxed max-h-52 sm:max-h-60 overflow-y-auto">
               {project.readmeContent}
             </div>
           </div>
@@ -243,13 +243,13 @@ export function ProjectDetailModal({ project, onClose }: ProjectDetailModalProps
         </div>
 
         {/* Modal Footer */}
-        <div className="sticky bottom-0 z-20 glass-panel border-t border-slate-800/80 px-6 py-4 flex items-center justify-between bg-[#0c101a]/95">
-          <span className="text-xs font-mono text-slate-500">
+        <div className="sticky bottom-0 z-20 glass-panel border-t border-slate-800/80 px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between bg-[#0c101a]/95">
+          <span className="hidden sm:inline text-xs font-mono text-slate-500">
             Press <kbd className="px-1.5 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700">ESC</kbd> to close
           </span>
           <button
             onClick={onClose}
-            className="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-xs font-semibold transition-all"
+            className="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-xs font-semibold transition-all text-center active:scale-[0.98]"
           >
             Close Breakdown
           </button>

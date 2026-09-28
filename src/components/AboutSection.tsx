@@ -103,46 +103,46 @@ export function AboutSection({ bio }: AboutSectionProps) {
   };
 
   return (
-    <section id="about" className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-900">
+    <section id="about" className="py-14 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-900">
       
       {/* Section Header */}
-      <div className="space-y-3 mb-14">
+      <div className="space-y-3 mb-10 sm:mb-14">
         <div className="flex items-center gap-2 text-purple-400 font-mono text-xs font-semibold tracking-wider uppercase">
           <User className="w-4 h-4" />
-          <span>Engineering Profile & Leadership</span>
+          <span>Engineering Profile &amp; Leadership</span>
         </div>
-        <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
+        <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-white">
           Adeseluka Toba Samuel
         </h2>
-        <p className="text-slate-400 text-sm sm:text-base max-w-3xl leading-relaxed">
+        <p className="text-slate-400 text-xs sm:text-base max-w-3xl leading-relaxed">
           {bio.summary}
         </p>
-        <div className="flex items-center gap-4 text-xs font-mono text-slate-400 pt-2 flex-wrap">
+        <div className="flex items-center gap-3 sm:gap-4 text-xs font-mono text-slate-400 pt-2 flex-wrap">
           <span className="flex items-center gap-1.5 text-slate-300">
             <MapPin className="w-3.5 h-3.5 text-rose-400" />
-            {bio.location}
+            <span>{bio.location}</span>
           </span>
-          <span>•</span>
+          <span className="text-slate-700">•</span>
           <span className="text-emerald-400 font-semibold">{bio.availabilityStatus}</span>
         </div>
       </div>
 
       {/* Engineering Philosophy Cards */}
-      <div className="space-y-4 mb-16">
-        <h3 className="text-lg font-bold text-white flex items-center gap-2">
-          <Sparkles className="w-4 h-4 text-sky-400" />
-          <span>Engineering Philosophy & Standards</span>
+      <div className="space-y-3 sm:space-y-4 mb-12 sm:mb-16">
+        <h3 className="text-base sm:text-lg font-bold text-white flex items-center gap-2">
+          <Sparkles className="w-4 h-4 text-sky-400 shrink-0" />
+          <span>Engineering Philosophy &amp; Standards</span>
         </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
           {bio.philosophy.map((item, idx) => (
-            <div key={idx} className="p-5 rounded-2xl bg-slate-900/50 border border-slate-800 space-y-2">
+            <div key={idx} className="p-4 sm:p-5 rounded-2xl bg-slate-900/50 border border-slate-800 space-y-2">
               <div className="flex items-center gap-3">
-                <div className="p-2 rounded-lg bg-slate-800/80 border border-slate-700/60">
+                <div className="p-2 rounded-lg bg-slate-800/80 border border-slate-700/60 shrink-0">
                   {getPhilosophyIcon(item.iconName)}
                 </div>
                 <h4 className="text-sm font-semibold text-white">{item.title}</h4>
               </div>
-              <p className="text-xs text-slate-400 leading-relaxed pl-11">
+              <p className="text-xs text-slate-400 leading-relaxed pl-0 sm:pl-11 pt-1 sm:pt-0">
                 {item.description}
               </p>
             </div>
@@ -151,22 +151,22 @@ export function AboutSection({ bio }: AboutSectionProps) {
       </div>
 
       {/* Interactive Tech Stack Matrix */}
-      <div className="space-y-4 mb-16">
-        <div className="flex items-center justify-between flex-wrap gap-2">
-          <h3 className="text-lg font-bold text-white flex items-center gap-2">
-            <Cpu className="w-4 h-4 text-emerald-400" />
+      <div className="space-y-3 sm:space-y-4 mb-12 sm:mb-16">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+          <h3 className="text-base sm:text-lg font-bold text-white flex items-center gap-2">
+            <Cpu className="w-4 h-4 text-emerald-400 shrink-0" />
             <span>Technical Competency Matrix</span>
           </h3>
           <span className="text-xs font-mono text-slate-500">8+ Years Production Experience</span>
         </div>
 
-        {/* Category Tabs */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none border-b border-slate-800">
+        {/* Category Tabs with native edge scrolling */}
+        <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-2 pt-1 scrollbar-none border-b border-slate-800 -mx-4 px-4 sm:mx-0 sm:px-0">
           {bio.techMatrix.map((group, idx) => (
             <button
               key={idx}
               onClick={() => setSelectedTechTab(idx)}
-              className={`px-4 py-2 text-xs font-mono font-medium rounded-t-lg transition-all whitespace-nowrap ${
+              className={`px-3.5 sm:px-4 py-2 text-xs font-mono font-medium rounded-t-lg transition-all whitespace-nowrap shrink-0 active:scale-[0.98] ${
                 selectedTechTab === idx
                   ? 'bg-slate-800 text-sky-400 border-b-2 border-sky-400 font-bold'
                   : 'text-slate-400 hover:text-white'
@@ -178,12 +178,12 @@ export function AboutSection({ bio }: AboutSectionProps) {
         </div>
 
         {/* Selected Category Skill Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5 sm:gap-3 pt-2">
           {bio.techMatrix[selectedTechTab].skills.map((skill, idx) => (
-            <div key={idx} className="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80 space-y-1.5">
-              <div className="flex items-center justify-between">
-                <span className="font-semibold text-sm text-white font-mono">{skill.name}</span>
-                <span className={`text-[10px] font-mono px-2 py-0.5 rounded-full uppercase font-bold ${
+            <div key={idx} className="p-3.5 sm:p-4 rounded-xl bg-slate-900/60 border border-slate-800/80 space-y-1.5">
+              <div className="flex items-center justify-between gap-2">
+                <span className="font-semibold text-xs sm:text-sm text-white font-mono truncate">{skill.name}</span>
+                <span className={`text-[9px] sm:text-[10px] font-mono px-2 py-0.5 rounded-full uppercase font-bold shrink-0 ${
                   skill.level === 'Expert' 
                     ? 'bg-emerald-500/15 text-emerald-400 border border-emerald-500/30'
                     : 'bg-sky-500/15 text-sky-400 border border-sky-500/30'
@@ -200,32 +200,32 @@ export function AboutSection({ bio }: AboutSectionProps) {
       </div>
 
       {/* Career Experience Timeline */}
-      <div className="space-y-6 mb-16">
-        <h3 className="text-lg font-bold text-white flex items-center gap-2">
-          <Briefcase className="w-4 h-4 text-purple-400" />
-          <span>Professional Experience & Track Record</span>
+      <div className="space-y-6 mb-12 sm:mb-16">
+        <h3 className="text-base sm:text-lg font-bold text-white flex items-center gap-2">
+          <Briefcase className="w-4 h-4 text-purple-400 shrink-0" />
+          <span>Professional Experience &amp; Track Record</span>
         </h3>
 
-        <div className="relative border-l border-slate-800 ml-3 sm:ml-4 pl-6 sm:pl-8 space-y-10">
+        <div className="relative border-l border-slate-800 ml-2 sm:ml-4 pl-4 sm:pl-8 space-y-8 sm:space-y-10">
           {careerTimeline.map((item, idx) => (
             <div key={idx} className="relative group">
-              {/* Timeline Dot */}
-              <div className="absolute -left-[31px] sm:-left-[39px] top-1.5 w-3.5 h-3.5 rounded-full bg-slate-900 border-2 border-sky-400 group-hover:bg-sky-400 transition-colors" />
+              {/* Perfectly centered timeline dot */}
+              <div className="absolute -left-4 sm:-left-8 -translate-x-1/2 top-1.5 w-3.5 h-3.5 rounded-full bg-slate-900 border-2 border-sky-400 group-hover:bg-sky-400 transition-colors" />
 
               <div className="space-y-2">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
                   <div>
-                    <h4 className="text-base font-bold text-white group-hover:text-sky-300 transition-colors">
+                    <h4 className="text-sm sm:text-base font-bold text-white group-hover:text-sky-300 transition-colors">
                       {item.role}
                     </h4>
-                    <span className="text-sm font-semibold text-sky-400 font-mono">
+                    <span className="text-xs sm:text-sm font-semibold text-sky-400 font-mono">
                       {item.company}
                     </span>
                   </div>
-                  <div className="flex items-center gap-2 text-xs font-mono text-slate-500">
-                    <Calendar className="w-3.5 h-3.5" />
+                  <div className="flex items-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs font-mono text-slate-500 flex-wrap">
+                    <Calendar className="w-3.5 h-3.5 shrink-0" />
                     <span>{item.period}</span>
-                    <span>•</span>
+                    <span className="text-slate-700">•</span>
                     <span>{item.location}</span>
                   </div>
                 </div>
@@ -245,32 +245,34 @@ export function AboutSection({ bio }: AboutSectionProps) {
       </div>
 
       {/* Education & Certifications */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6 border-t border-slate-800">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 pt-6 border-t border-slate-800">
         
         {/* Education */}
-        <div className="p-6 rounded-2xl bg-slate-900/40 border border-slate-800 space-y-3">
-          <div className="flex items-center gap-2 text-white font-bold text-base">
-            <GraduationCap className="w-5 h-5 text-sky-400" />
+        <div className="p-4 sm:p-6 rounded-2xl bg-slate-900/40 border border-slate-800 space-y-3">
+          <div className="flex items-center gap-2 text-white font-bold text-sm sm:text-base">
+            <GraduationCap className="w-5 h-5 text-sky-400 shrink-0" />
             <span>Formal Education</span>
           </div>
           <div>
-            <div className="font-semibold text-sm text-white">B.Eng. Electrical & Electronics Engineering</div>
+            <div className="font-semibold text-xs sm:text-sm text-white">B.Eng. Electrical &amp; Electronics Engineering</div>
             <div className="text-xs font-mono text-sky-400 mt-0.5">Federal University of Technology, Akure (FUTA)</div>
-            <div className="text-xs text-slate-500 mt-1">Class of 2016 • Rigorous foundation in circuit analysis, digital systems, signal processing, and low-level firmware.</div>
+            <div className="text-[11px] sm:text-xs text-slate-500 mt-1 leading-relaxed">
+              Class of 2016 • Rigorous foundation in circuit analysis, digital systems, signal processing, and low-level firmware.
+            </div>
           </div>
         </div>
 
         {/* Certifications */}
-        <div className="p-6 rounded-2xl bg-slate-900/40 border border-slate-800 space-y-3">
-          <div className="flex items-center gap-2 text-white font-bold text-base">
-            <Award className="w-5 h-5 text-emerald-400" />
-            <span>Certifications & Honors</span>
+        <div className="p-4 sm:p-6 rounded-2xl bg-slate-900/40 border border-slate-800 space-y-3">
+          <div className="flex items-center gap-2 text-white font-bold text-sm sm:text-base">
+            <Award className="w-5 h-5 text-emerald-400 shrink-0" />
+            <span>Certifications &amp; Honors</span>
           </div>
           <div className="space-y-2">
             {certifications.map((c, idx) => (
-              <div key={idx} className="flex items-center justify-between text-xs font-mono border-b border-slate-800/60 pb-1.5">
-                <span className="text-slate-300">{c.name}</span>
-                <span className="text-slate-500 font-semibold">{c.year}</span>
+              <div key={idx} className="flex items-center justify-between text-xs font-mono border-b border-slate-800/60 pb-1.5 gap-2">
+                <span className="text-slate-300 truncate">{c.name}</span>
+                <span className="text-slate-500 font-semibold shrink-0">{c.year}</span>
               </div>
             ))}
           </div>
