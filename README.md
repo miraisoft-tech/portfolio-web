@@ -48,7 +48,7 @@ Unlike standard static portfolios, this application is engineered as a **deep te
 ### 2. 🏗️ Deep-Dive Project Architecture Modals
 - Filter projects by domain (**AI & Machine Learning**, **Distributed Systems**, **Cloud & DevOps**, **IoT & Embedded**).
 - Open interactive modals featuring:
-  - High-level business overview and verified production metrics (e.g., *10,000+ live viewers*, *28% AWS cost reduction*, *50,000+ HP workstations*).
+  - High-level business overview and verified production metrics (e.g., *10,000+ live viewers*, *28% AWS cost reduction*, a planned device line by HP for developers).
   - **Architecture Decision Records (ADRs)** detailing context, alternative solutions considered, trade-offs, and final outcomes.
   - Interactive ASCII / visual architecture flowcharts.
   - Direct links to live deployments and GitHub repositories.
