@@ -166,6 +166,82 @@ SellersPro is a multi-tenant commerce and merchant automation suite powering Nig
     ]
   },
   {
+    slug: "easystream-live-presenter",
+    title: "EasyPresenter Studio: Live Broadcast & Church Presentation Controller",
+    tagline: "Modern EasyWorship / ProPresenter-grade presentation and broadcast engine built with Vite, React 19, TypeScript, and transparent vMix/OBS overlay synchronization.",
+    overview: "Architected an open-source, full-featured live presentation and broadcast controller system. Delivers dual-monitor projection output, sub-frame WebSocket slide and scripture synchronization, high-contrast transparent video overlays for vMix and OBS, stage confidence monitor feeds, and automated offline multi-version Bible search.",
+    featured: true,
+    category: "Full-Stack",
+    visibility: "public",
+    date: "2025 - 2026",
+    version: "v2.0.0",
+    metrics: [
+      { label: "Sync Latency", value: "<16ms", trend: "60 FPS WebSockets" },
+      { label: "Overlay Support", value: "vMix & OBS", trend: "Transparent alpha" },
+      { label: "Multi-Surface Feeds", value: "3 Surfaces", trend: "Display, Stage, Overlay" },
+      { label: "Containerization", value: "Nixpacks & Docker", trend: "Coolify ready" }
+    ],
+    techStack: [
+      { name: "React 19", category: "framework", highlight: true },
+      { name: "TypeScript", category: "language", highlight: true },
+      { name: "Vite", category: "tool", highlight: true },
+      { name: "Node.js & Express", category: "framework", highlight: true },
+      { name: "WebSockets", category: "infra", highlight: true },
+      { name: "Tailwind CSS", category: "framework" },
+      { name: "Docker & Nixpacks", category: "infra", highlight: true }
+    ],
+    productionUrl: "https://github.com/smartraysam/easystream",
+    githubUrl: "https://github.com/smartraysam/easystream",
+    architecture: {
+      summary: "Decoupled real-time presentation engine separating operator studio controls from remote display clients (Front of House, Stage Confidence Monitor, and vMix/OBS Alpha Overlay). Slide state, live styling typography, motion backgrounds, and scripture search are synchronized over persistent WebSockets.",
+      diagramMermaid: `flowchart TD
+    Operator[Broadcast Operator Studio Console] -->|Real-Time Action State| Server[Node.js WebSocket Sync Server]
+    Server -->|Sub-16ms Frame Broadcast| FOH[FOH Main Projection Display (/display)]
+    Server -->|Confidence Telemetry & Chords| Stage[Stage Confidence Monitor (/stage)]
+    Server -->|Transparent Alpha Channel| vMix[vMix / OBS Broadcast Studio Overlay]
+    Server -->|Offline Scripture Engine| BibleDB[(Local Bible & Lyric Store)]`,
+      adrs: [
+        {
+          title: "ADR-01: Bidirectional WebSockets vs Server-Sent Events (SSE) for Controller Sync",
+          context: "Live church operators require instant feedback, stage timer synchronization, emergency lower-third alerts, and live slide switching with sub-frame perceptual delay.",
+          decision: "Implemented lightweight bidirectional WebSocket connections with heartbeat re-negotiation between the operator console and output display windows.",
+          tradeOffs: "Requires stateful WebSocket connections on the server; guarantees true zero-lag synchronization across multi-screen projection setups."
+        },
+        {
+          title: "ADR-02: GPU-Accelerated CSS Compositing for vMix Transparent Alpha Overlays",
+          context: "Broadcasters using vMix and OBS require clean lower-third overlays without green screen chroma key artifacts around stylized typography.",
+          decision: "Engineered a dedicated /display?overlay=1 route with native CSS hardware-accelerated transparency and outline drop-shadow shaders.",
+          tradeOffs: "Requires browser source input in OBS/vMix; completely eliminates chroma-key fringing on gradient and transparent text."
+        }
+      ],
+      challenges: [
+        {
+          problem: "Rapid slide clicking during dynamic live worship caused DOM flicker and inconsistent lyric line wrapping across varying projector aspect ratios.",
+          solution: "Implemented CSS text auto-scaling observers combined with CSS transition opacity cross-fading and client-side pre-rendering of upcoming slide stanzas.",
+          outcome: "Delivered butter-smooth 60 FPS transitions with zero visible text snapping or redraw artifacts."
+        }
+      ]
+    },
+    readmeContent: `# EasyPresenter Studio (v2.0)
+
+A modern, full-featured Church Presentation & Broadcast Controller built with **Vite + React 19 + TypeScript**, featuring an **EasyWorship / ProPresenter-grade Studio Console**, live dual-monitor projection output, and transparent vMix/OBS broadcast overlays.
+
+### ✨ Key Features
+- **Studio Console**: Quick scripture search, custom song database, rich typography editor, motion video backgrounds, and lower-third overlays.
+- **Multi-Display Outputs**:
+  - Main Projection Display (\`/display\`)
+  - Transparent vMix / OBS Alpha Overlay (\`/display?overlay=1\`)
+  - Stage Confidence Monitor (\`/stage\`)
+- **Deployment Ready**: One-click Nixpacks / Coolify support, Docker Compose, and standalone Node.js server.
+`,
+    learnedSkills: [
+      "Real-time WebSocket protocol design for multi-display presentation surfaces",
+      "Broadcast alpha channel compositing and high-contrast typography for live video",
+      "Nixpacks and Docker container deployment for Coolify self-hosting",
+      "React 19 and Vite build optimizations for zero-latency client state management"
+    ]
+  },
+  {
     slug: "fenris-livestream-engine",
     title: "Fenris: Real-Time Live Streaming & Monetization Engine",
     tagline: "Scalable content monetization and live video infrastructure designed for 10,000+ concurrent viewers with sub-2s latency.",

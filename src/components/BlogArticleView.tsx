@@ -25,22 +25,25 @@ export function BlogArticleView({ post, relatedPosts = [] }: BlogArticleViewProp
 
   useEffect(() => {
     // Check local storage for likes & bookmarks
-    try {
-      const storedLikes = localStorage.getItem(`blog_likes_${post.slug}`);
-      if (storedLikes) {
-        setLikes(parseInt(storedLikes, 10));
+    const frameId = requestAnimationFrame(() => {
+      try {
+        const storedLikes = localStorage.getItem(`blog_likes_${post.slug}`);
+        if (storedLikes) {
+          setLikes(parseInt(storedLikes, 10));
+        }
+        const userLiked = localStorage.getItem(`blog_has_liked_${post.slug}`);
+        if (userLiked === 'true') {
+          setHasLiked(true);
+        }
+        const bookmarked = localStorage.getItem(`blog_bookmark_${post.slug}`);
+        if (bookmarked === 'true') {
+          setIsBookmarked(true);
+        }
+      } catch {
+        // Storage access fail-safe
       }
-      const userLiked = localStorage.getItem(`blog_has_liked_${post.slug}`);
-      if (userLiked === 'true') {
-        setHasLiked(true);
-      }
-      const bookmarked = localStorage.getItem(`blog_bookmark_${post.slug}`);
-      if (bookmarked === 'true') {
-        setIsBookmarked(true);
-      }
-    } catch {
-      // Storage access fail-safe
-    }
+    });
+
 
     // Scroll spy for Table of Contents
     const handleScroll = () => {
@@ -57,7 +60,10 @@ export function BlogArticleView({ post, relatedPosts = [] }: BlogArticleViewProp
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      cancelAnimationFrame(frameId);
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, [post.slug, post.sections]);
 
   const handleCopyLink = () => {

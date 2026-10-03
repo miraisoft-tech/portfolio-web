@@ -181,6 +181,7 @@ Here are some of the flagship architectures detailed within the portfolio:
 
 | System | Role & Focus | Key Highlight |
 |---|---|---|
+| **[EasyPresenter Studio](https://github.com/smartraysam/easystream)** | *Creator & Full-Stack Architect* (Live Presentation / Broadcast) | Open-source live broadcast & church presentation console with sub-16ms WebSocket multi-display sync and transparent vMix/OBS overlay. |
 | **[SellersPro.app](https://sellerspro.app)** | *Founder & Tech Lead* (Full-Stack / AI) | Autonomous RAG sales rep using **PgVector** inside PostgreSQL + Paystack webhook idempotency engine. |
 | **Fenris Media Engine** | *Tech Lead* (Streaming Infrastructure) | Scaled live video to **10,000+ concurrent viewers** (<2.0s latency) using **Go & AWS IVS**, reducing transcoding costs by **28%**. |
 | **HP Dev One Optimization** | *Software Engineer* (Linux / Systems) | Custom GNOME shell extensions & Linux compositor patches shipped to **50,000+ HP developer laptops**. |
