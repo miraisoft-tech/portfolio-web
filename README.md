@@ -10,7 +10,6 @@
 [![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
 
 ---
-
 ## 🌟 Overview
 
 This repository houses the modern web portfolio and technical showcase for **Adeseluka Toba Samuel** (*SmartRay*) — Senior Software Engineer, Tech Lead, and Distributed Systems / AI Specialist with 8+ years of production experience across Lagos, Canada, and globally distributed engineering teams.
