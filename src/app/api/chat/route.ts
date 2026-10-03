@@ -17,7 +17,7 @@ export async function POST(req: Request) {
 
     if (hasGoogleKey) {
       const result = streamText({
-        model: google('gemini-1.5-flash') as any,
+        model: google('gemini-1.5-flash') as unknown as Parameters<typeof streamText>[0]['model'],
         system: systemPrompt,
         messages,
       });
@@ -26,7 +26,7 @@ export async function POST(req: Request) {
 
     if (hasOpenAIKey) {
       const result = streamText({
-        model: openai('gpt-4o-mini') as any,
+        model: openai('gpt-4o-mini') as unknown as Parameters<typeof streamText>[0]['model'],
         system: systemPrompt,
         messages,
       });
@@ -108,10 +108,11 @@ With 8+ years across the stack, Samuel's core competencies include:
         'x-vercel-ai-data-stream': 'v1',
       },
     });
-  } catch (err: any) {
+  } catch (err: unknown) {
+    const errorMessage = err instanceof Error ? err.message : 'Internal Server Error';
     console.error('Chat API Error:', err);
     return new Response(
-      JSON.stringify({ error: err?.message || 'Internal Server Error' }),
+      JSON.stringify({ error: errorMessage }),
       { status: 500, headers: { 'Content-Type': 'application/json' } }
     );
   }

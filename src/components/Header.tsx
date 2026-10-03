@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Terminal, Cpu, BookOpen, User, Menu, X, Mail, Shield, Calendar, Sparkles } from 'lucide-react';
+import { Terminal, Cpu, BookOpen, User, Menu, X, Mail, Sparkles } from 'lucide-react';
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

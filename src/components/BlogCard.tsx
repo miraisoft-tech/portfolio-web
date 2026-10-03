@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { BlogPost } from '../types/blog';
-import { Clock, Calendar, ArrowRight, Tag, Bookmark, Sparkles, Terminal } from 'lucide-react';
+import { Clock, Calendar, ArrowRight, Sparkles } from 'lucide-react';
 
 interface BlogCardProps {
   post: BlogPost;

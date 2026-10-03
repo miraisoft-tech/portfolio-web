@@ -2,11 +2,11 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { BlogPost, BlogSectionBlock } from '../types/blog';
+import { BlogPost } from '../types/blog';
 import { 
   ArrowLeft, Clock, Calendar, Share2, Check, Copy, 
   ThumbsUp, Bookmark, Sparkles, AlertTriangle, Lightbulb, 
-  Cpu, Terminal, ChevronRight, Hash, MessageSquare 
+  Cpu, Terminal, ChevronRight, Hash 
 } from 'lucide-react';
 import { BlogCard } from './BlogCard';
 

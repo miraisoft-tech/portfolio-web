@@ -3,16 +3,14 @@
 import React, { useState } from 'react';
 import { EngineerBio } from '../types/portfolio';
 import { 
-  Terminal, Sparkles, ArrowRight, Calendar, 
-  Download, Bot, CheckCircle, Zap, Shield, Cpu 
+  Terminal, ArrowRight, Calendar, Zap, Shield 
 } from 'lucide-react';
 
 interface HeroSectionProps {
   bio: EngineerBio;
-  onOpenAIModal?: () => void;
 }
 
-export function HeroSection({ bio, onOpenAIModal }: HeroSectionProps) {
+export function HeroSection({ bio }: HeroSectionProps) {
   const [copiedEmail, setCopiedEmail] = useState(false);
   const [showPitchModal, setShowPitchModal] = useState(false);
 

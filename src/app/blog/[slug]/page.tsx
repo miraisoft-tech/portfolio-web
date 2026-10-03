@@ -60,7 +60,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const allPosts = getAllBlogPosts();
   const relatedPosts = allPosts
     .filter((p) => p.slug !== post.slug)
-    .sort((a, b) => (a.category === post.category ? -1 : 1))
+    .sort((a) => (a.category === post.category ? -1 : 1))
     .slice(0, 3);
 
   return (

@@ -1,11 +1,11 @@
 'use client';
 
 import React, { useState, useMemo } from 'react';
-import { Project, ProjectCategory, VisibilityType } from '../types/portfolio';
+import { Project } from '../types/portfolio';
 import { ProjectDetailModal } from './ProjectDetailModal';
 import { 
   Search, ExternalLink, GitBranch, ArrowRight, 
-  Layers, Lock, CheckCircle, Cpu, Filter 
+  Layers, Lock, Filter 
 } from 'lucide-react';
 
 interface ProjectsGridProps {

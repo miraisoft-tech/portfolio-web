@@ -1,18 +1,7 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
-import { Terminal, Cpu, BookOpen, User, Sparkles, Globe, Mail } from "lucide-react";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { Header } from "@/components/Header";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -34,8 +23,6 @@ export const metadata: Metadata = {
   authors: [{ name: "Adeseluka Toba Samuel" }],
 };
 
-import { Header } from "@/components/Header";
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -44,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark scroll-smooth">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} bg-[#07090e] text-[#f8fafc] antialiased selection:bg-sky-500/20 selection:text-sky-300 min-h-screen flex flex-col font-sans`}
+        className="bg-[#07090e] text-[#f8fafc] antialiased selection:bg-sky-500/20 selection:text-sky-300 min-h-screen flex flex-col font-sans"
       >
         {/* Ambient Top Glows */}
         <div className="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-6xl h-64 bg-radial-glow pointer-events-none -z-10" />

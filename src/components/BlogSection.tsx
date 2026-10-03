@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { BlogPost } from '../types/blog';
 import { BlogCard } from './BlogCard';
-import { BookOpen, ArrowRight, Sparkles, Terminal } from 'lucide-react';
+import { BookOpen, ArrowRight, Terminal } from 'lucide-react';
 
 interface BlogSectionProps {
   posts: BlogPost[];

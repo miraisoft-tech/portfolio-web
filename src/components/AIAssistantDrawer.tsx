@@ -2,17 +2,13 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { useChat } from 'ai/react';
-import { 
-  Bot, X, Send, Sparkles, Terminal, 
-  RefreshCw, User, Cpu, Shield, Zap, 
-  ExternalLink, ChevronDown 
-} from 'lucide-react';
+import { Bot, X, Send, User } from 'lucide-react';
 
 export function AIAssistantDrawer() {
   const [isOpen, setIsOpen] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  const { messages, input, handleInputChange, handleSubmit, isLoading, setInput, reload, error } = useChat({
+  const { messages, input, handleInputChange, handleSubmit, isLoading, setInput } = useChat({
     api: '/api/chat',
     initialMessages: [
       {

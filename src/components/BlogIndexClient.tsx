@@ -1,10 +1,9 @@
 'use client';
 
 import React, { useState, useMemo } from 'react';
-import Link from 'next/link';
-import { BlogPost, BlogCategory } from '../types/blog';
+import { BlogPost } from '../types/blog';
 import { BlogCard } from './BlogCard';
-import { Search, Sparkles, Terminal, Filter, BookOpen, Layers, Rss } from 'lucide-react';
+import { Search, Sparkles, Terminal, Filter, BookOpen } from 'lucide-react';
 
 interface BlogIndexClientProps {
   initialPosts: BlogPost[];

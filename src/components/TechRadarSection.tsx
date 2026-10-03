@@ -3,8 +3,7 @@
 import React, { useState } from 'react';
 import { LearningRadarItem, TILNote } from '../types/portfolio';
 import { 
-  BookOpen, Terminal, Sparkles, Code2, 
-  TrendingUp, Compass, CheckCircle2, ChevronRight 
+  Terminal, TrendingUp, Compass 
 } from 'lucide-react';
 
 interface TechRadarSectionProps {

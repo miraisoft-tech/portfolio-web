@@ -11,11 +11,8 @@ import {
   Sparkles,
   ShieldCheck,
   GitMerge,
-  ExternalLink,
   Calendar,
   MapPin,
-  Mail,
-  CheckCircle2,
 } from "lucide-react";
 
 interface AboutSectionProps {
