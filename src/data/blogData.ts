@@ -480,7 +480,7 @@ export class PaymentWebhookHandler {
   {
     slug: "debugging-gnome-memory-leaks-gjs-linux",
     title: "Eliminating Memory Leaks in GNOME Shell Compositor Extensions: C-Pointer Lifecycles in GJS",
-    subtitle: "How we diagnosed and fixed compositor RAM bloat for 50,000+ HP Dev One Linux developer workstations.",
+    subtitle: "How we diagnosed and fixed compositor RAM bloat for the HP Dev One Linux developer workstation (planned to reach 50,000+ developer machines before device discontinuation by HP).",
     excerpt: "Deep dive into debugging the GNOME Shell Mutter compositor, tracing circular C-pointer bindings in GJS signal disconnect listeners, and shipping seamless OTA Debian package updates.",
     publishedAt: "June 04, 2026",
     readTime: "7 min read",
@@ -494,7 +494,7 @@ export class PaymentWebhookHandler {
       twitter: "https://twitter.com/smartraysam"
     },
     metricsHighlight: [
-      { label: "Active Machines", value: "50,000+", subtext: "Global HP Dev One developer laptops" },
+      { label: "Target Reach", value: "50,000+", subtext: "Planned to reach (Device discontinued by HP)" },
       { label: "Compositor Uptime", value: "Weeks", subtext: "Zero memory growth across continuous use" },
       { label: "RAM Overhead", value: "0.0 MB", subtext: "Embedded in Mutter compositor thread" },
       { label: "Distribution", value: "OTA Deb", subtext: "Automated APT repository updates" }
@@ -510,7 +510,7 @@ export class PaymentWebhookHandler {
         id: "the-hp-devone-context",
         heading: "1. The Context: Flagship Linux Hardware",
         paragraphs: [
-          "During my engineering work with Hewlett-Packard (HP Inc.) on the HP Dev One—the flagship Linux laptop powered by Pop!_OS and AMD Ryzen 7 PRO processors—our team was tasked with building native desktop workflow enhancements for developer productivity.",
+          "During my engineering work with Hewlett-Packard (HP Inc.) on the HP Dev One—a developer-focused Linux laptop powered by Pop!_OS and AMD Ryzen 7 PRO processors that was later discontinued by HP—our team was tasked with building native desktop workflow enhancements for developer productivity.",
           "Rather than running a heavy background Electron daemon that would consume 150MB to 300MB of developer RAM just to show a few quick application shortcuts, we chose to write a native GNOME Shell extension in GJS that runs directly inside the compositor process."
         ],
         callout: {
@@ -581,7 +581,7 @@ class BulletproofShortcutManager {
         heading: "3. Verification & Over-The-Air Debian Distribution",
         paragraphs: [
           "To prove the fix was rock-solid, we automated display hotplug simulation scripts using `xrandr` and Wayland virtual display drivers, cycling resolutions 5,000 times consecutively over a 12-hour automated test harness.",
-          "Compositor RSS remained completely flat at 178MB +/- 4MB across all 5,000 cycles. We signed the updated package and deployed it seamlessly to 50,000+ developer machines through HP's automated Debian APT repository pipeline without requiring user reboots."
+          "Compositor RSS remained completely flat at 178MB +/- 4MB across all 5,000 cycles. We signed the updated package and deployed it via HP's automated Debian APT repository pipeline, planned to reach 50,000+ developer machines before the hardware line was discontinued by HP."
         ],
         callout: {
           type: "tip",

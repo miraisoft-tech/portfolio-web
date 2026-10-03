@@ -41,6 +41,8 @@ export interface Project {
   visibility: VisibilityType;
   date: string;
   version: string;
+  discontinued?: boolean;
+  discontinuedReason?: string;
   
   // Fast Recruiter Scan
   metrics: ProjectMetric[];

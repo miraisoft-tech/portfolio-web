@@ -164,6 +164,11 @@ export function ProjectsGrid({ initialProjects }: ProjectsGridProps) {
                       }`}>
                         {project.visibility === 'private' ? '🔒 Private Architecture' : '🟢 Public Project'}
                       </span>
+                      {project.discontinued && (
+                        <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-md font-semibold shrink-0 bg-rose-500/10 text-rose-400 border border-rose-500/25">
+                          ⚠️ Discontinued by HP
+                        </span>
+                      )}
                       <span className="text-[10px] sm:text-[11px] font-mono text-slate-500 break-words min-w-0">{project.category}</span>
                     </div>
                     <h3 className="text-base sm:text-xl font-bold text-white group-hover:text-sky-300 transition-colors break-words leading-snug min-w-0">

@@ -136,7 +136,7 @@ export function HeroSection({ bio, onOpenAIModal }: HeroSectionProps) {
               </p>
               <ul className="space-y-1.5 pl-4 list-disc text-slate-300 text-xs sm:text-sm">
                 <li>Scaled live-streaming infrastructure to <strong>10,000+ concurrent viewers</strong> with sub-2s latency using Go and AWS IVS.</li>
-                <li>Shipped Linux desktop optimizations and GNOME extensions to <strong>50,000+ developer workstations at HP Inc</strong>.</li>
+                <li>Developed Linux desktop optimizations and GNOME extensions <strong>planned to reach 50,000+ developer workstations at HP Inc</strong> (device line discontinued by HP).</li>
                 <li>Built production RAG pipelines (PgVector + OpenAI + LangChain) powering <strong>SellersPro.app</strong> and conversational AI apps.</li>
                 <li>Cut enterprise cloud video transcoding costs by <strong>28%</strong> through serverless event architecture.</li>
               </ul>

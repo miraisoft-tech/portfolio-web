@@ -42,7 +42,7 @@ Results-driven Senior Software Engineer and Tech Lead with 8+ years of end-to-en
 
 - **Fenris Media**: Scaled live video infrastructure to **10,000+ concurrent viewers** (<2s latency) on Go & AWS IVS, reducing cloud transcoding bills by **28%**.
 - **SellersPro.app**: Multi-tenant commerce SaaS featuring autonomous AI sales reps powered by **PgVector RAG** and Paystack settlement.
-- **Hewlett-Packard (HP Inc.)**: Shipped Linux OS performance patches and GNOME extensions to **50,000+ developer workstations**.
+- **Hewlett-Packard (HP Inc.)**: Developed Linux OS performance patches and GNOME extensions planned to reach **50,000+ developer workstations** (hardware line discontinued by HP).
 - **Contact**: Reach Samuel directly at [adeselukatobasamuel@yahoo.com](mailto:adeselukatobasamuel@yahoo.com) or book a technical chat.`;
 
     if (latestUserMessage.includes('pitch') || latestUserMessage.includes('recruiter') || latestUserMessage.includes('who is')) {
@@ -50,7 +50,7 @@ Results-driven Senior Software Engineer and Tech Lead with 8+ years of end-to-en
 Samuel (SmartRay) is a proven **Senior Software Engineer and Tech Lead** with **8+ years of production experience** delivering high-reliability backends, cloud architectures, and autonomous AI applications:
 
 1. **Proven Scale**: Scaled live streaming to **10,000+ concurrent viewers** with sub-2-second latency using Go and AWS IVS at Fenris Media.
-2. **Global Enterprise Impact**: Optimized Linux kernel and desktop compositors shipped to **50,000+ HP Dev One developer workstations** at Hewlett-Packard (HP Inc.).
+2. **Global Enterprise Impact**: Optimized Linux kernel and desktop compositors planned to reach **50,000+ HP Dev One developer workstations** at Hewlett-Packard (HP Inc., device subsequently discontinued).
 3. **AI & Modern RAG Mastery**: Shipped production RAG pipelines (PgVector + OpenAI + LangChain) powering multi-tenant SaaS platforms like **SellersPro.app**.
 4. **Cloud Economics**: Slashed enterprise media transcoding costs by **28%** by migrating to serverless event-driven AWS MediaConvert.
 

@@ -52,6 +52,11 @@ export function ProjectDetailModal({ project, onClose }: ProjectDetailModalProps
               }`}>
                 {project.visibility === 'private' ? '🔒 Private Architecture' : '🟢 Public / Open Source'}
               </span>
+              {project.discontinued && (
+                <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-wider px-2 sm:px-2.5 py-0.5 rounded-full font-semibold bg-rose-500/15 text-rose-400 border border-rose-500/30">
+                  ⚠️ Discontinued by HP
+                </span>
+              )}
               <span className="text-[10px] sm:text-xs font-mono text-slate-400">
                 {project.category} • {project.date}
               </span>

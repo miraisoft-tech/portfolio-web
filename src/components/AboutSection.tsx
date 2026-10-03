@@ -67,8 +67,8 @@ export function AboutSection({ bio }: AboutSectionProps) {
       period: "Mar 2022 – Jan 2023",
       location: "Remote",
       achievements: [
-        "Optimized Pop!_OS / Linux kernel bottlenecks and resolved GNOME Shell compositor memory leaks for the flagship HP Dev One developer workstation.",
-        "Developed a native GNOME Shell extension shipped via Debian OTA repository, improving daily workflow for 50,000+ developers.",
+        "Optimized Pop!_OS / Linux kernel bottlenecks and resolved GNOME Shell compositor memory leaks for the HP Dev One developer workstation (hardware line subsequently discontinued by HP).",
+        "Developed a native GNOME Shell extension planned to reach 50,000+ developer workstations via Debian OTA repository.",
         "Built a GDPR-compliant abandoned-checkout recovery service using React and Express, recovering an estimated 12% of abandoned sessions.",
       ],
     },

@@ -10,7 +10,7 @@ export const engineerBio: EngineerBio = {
   highlights: [
     { label: "Engineering Experience", value: "8+ Years", detail: "End-to-end system ownership from firmware to cloud AI" },
     { label: "Live Concurrency", value: "10,000+", detail: "Simultaneous live video viewers scaled on AWS IVS & Go" },
-    { label: "Global Users Reached", value: "50,000+", detail: "Daily HP Dev One workstation engineers using shipped tools" },
+    { label: "Planned Reach", value: "50,000+", detail: "Workstation developers planned to reach before HP discontinued the device line" },
     { label: "Cost Reduction", value: "28% Infra", detail: "Optimized video transcoding pipelines via event-driven SNS" }
   ],
   philosophy: [
@@ -384,15 +384,18 @@ npm run dev:all
   {
     slug: "hp-devone-linux-optimization",
     title: "HP Dev One: Linux Workstation Optimization & Cloud Service",
-    tagline: "Optimized Pop!_OS / Linux kernel bottlenecks and developed GNOME desktop software shipped to 50,000+ HP Dev One developer workstations.",
-    overview: "Software Engineer at Hewlett-Packard (HP Inc.). Diagnosed and resolved memory leaks in GNOME Shell, built a native GNOME extension enabling desktop workflow shortcuts for 50,000+ users, and built a GDPR-compliant abandoned-checkout recovery service for hpdevone.com.",
+    tagline: "Optimized Pop!_OS / Linux kernel bottlenecks and developed GNOME desktop software planned to reach 50,000+ HP Dev One developer workstations (Discontinued by HP).",
+    overview: "Software Engineer at Hewlett-Packard (HP Inc.). Diagnosed and resolved memory leaks in GNOME Shell, built a native GNOME extension enabling desktop workflow shortcuts planned to reach 50,000+ users, and built a GDPR-compliant abandoned-checkout recovery service for hpdevone.com before the device was discontinued by HP.",
     featured: true,
     category: "Cloud & DevOps",
     visibility: "private",
     date: "2022 - 2023",
     version: "v1.1-deb",
+    discontinued: true,
+    discontinuedReason: "Device line discontinued by HP Inc.",
     metrics: [
-      { label: "Active Workstation Users", value: "50,000+", trend: "Shipped globally" },
+      { label: "Target Scale", value: "50,000+", trend: "Planned to reach" },
+      { label: "Hardware Status", value: "Discontinued", trend: "Discontinued by HP" },
       { label: "Abandoned Checkout Recovery", value: "12%", trend: "GDPR-compliant" },
       { label: "OTA Distribution", value: "Debian repo", trend: "Automated updates" }
     ],
@@ -404,7 +407,7 @@ npm run dev:all
       { name: "Node.js / Express", category: "framework" }
     ],
     productionUrl: "https://hpdevone.com",
-    ndaNotice: "Enterprise HP Inc. Engineering: Work completed under contract for Hewlett-Packard. Shipped publicly across HP Dev One developer hardware platforms.",
+    ndaNotice: "Enterprise HP Inc. Engineering: Work completed under contract for Hewlett-Packard. The HP Dev One hardware line was subsequently discontinued by HP. Software optimizations were planned to reach 50,000+ developer workstations.",
     architecture: {
       summary: "Developed desktop extensions interfacing with GNOME Mutter window manager and DBus IPC subsystems. Built decoupled cloud microservices for user consent and abandoned checkout notifications.",
       diagramMermaid: `flowchart LR
@@ -649,6 +652,6 @@ LIMIT 5;`,
     title: "Preventing Memory Leaks in GNOME Shell Compositor Extensions",
     tags: ["Linux", "GNOME", "GJS", "Kernel"],
     summary: "When building desktop shell extensions in GJS on HP Dev One workstations, signal listener disconnects that reference outer closure variables create circular C-pointer bindings that survive garbage collection. Explicitly nullifying reference bindings in disable() keeps compositor memory permanently flat.",
-    impact: "Ensured rock-solid memory stability for 50,000+ HP Dev One developer machines."
+    impact: "Ensured rock-solid memory stability planned to reach 50,000+ HP Dev One developer workstations before device discontinuation."
   }
 ];
