@@ -1,6 +1,6 @@
 # ⚡ Adeseluka Toba Samuel — Senior Engineer & Tech Lead Portfolio
 
-> High-performance, learning-focused portfolio showcasing distributed systems, high-concurrency streaming engines, autonomous AI architectures, and IoT platforms.
+> High-performance, learning-focused portfolio showcasing distributed systems, high-concurrency streaming engines, autonomous AI architectures, and IoT platforms
 
 [![Next.js](https://img.shields.io/badge/Next.js-16.3.6-black?style=flat-square&logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19.2.8-blue?style=flat-square&logo=react)](https://react.dev/)
